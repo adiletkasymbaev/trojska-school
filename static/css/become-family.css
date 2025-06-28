@@ -1,0 +1,113 @@
+.become-family{
+    padding: 49px;
+
+}
+.become-family-block{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+
+}
+
+.become-family-content{
+    display: flex;
+}
+
+.become-family-box{
+    margin-top: 32px;
+    width: 401px;
+    height: 301px;
+    border-radius: 8px;
+    /* light green */
+    background: rgb(207, 209, 196);
+    padding: 26px;
+    position: relative;
+}
+
+.become-position {
+    position: absolute;
+    top: 0;
+    left: 326px;
+}
+
+.become-box-title{
+
+    padding-top: 56px;
+    color: rgb(2, 15, 1);
+    font-family: Literata;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.become-box-text{
+    padding-top: 24px;
+    color: rgba(2, 15, 1, 0.66);
+    font-family: Literata;
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.become-family-title{
+    /* Заголовки */
+    color: rgb(145, 50, 50);
+    font-family: Playfair Display;
+    font-size: 48px;
+    font-weight: 500;
+    line-height: 120%;
+    text-align: left;
+}
+
+.become-family-h3{
+    /* подзаголовки 2 */
+    padding-top: 24px;
+    color: rgb(79, 95, 77);
+    font-family: Literata;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.become-family-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 27px;
+    position: relative;
+}
+
+.become-family-btn{
+    position: absolute;
+    top: -66px;
+    right: 23px;
+    margin-bottom: 18px ;
+    width: 183px;
+    height: 51px;
+    /* Base */
+    font-family: Literata;
+    font-size: 21px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: center;
+    box-sizing: border-box;
+    /* green */
+    border: 2px solid rgb(79, 95, 77);
+    border-radius: 24px;
+    color: rgb(79, 95, 77);
+    background: none;
+    cursor: pointer;
+    transition: all .2s;
+}
+
+.become-family-btn:hover {
+    background-color: rgb(79, 95, 77);
+    color: white;
+}

@@ -1,0 +1,42 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %} {{ current_page_info.title }} {% endblock %}
+
+{% block content %}
+
+  <div class="about-school">
+    <div class="about-school-hero">
+      <div class="about-school-hero-image-wrap">
+        <img src="{{ current_page_info.image.url }}" alt="" class="about-school-hero-image">
+      </div>
+
+      <div class="container">
+        <h1 class="about-school-hero-title no-limit">
+          {{ current_page_info.title }}
+        </h1>
+      </div>
+    </div>
+
+    <div class="container">
+      <h2 class="generic-subtitle">
+        Учащимся | {{ current_page_info.title }}
+      </h2>
+    </div>
+
+    <div class="about-school-container">
+      <div class="container about-school-page-content">
+        {{ current_page_info.description|safe|linebreaksbr }}
+      </div>
+
+      <div class="container attestation-link-list">
+        {% for l in links %}
+        <a href="{{ l.url }}" class="attestation-link-item">
+          <img src="{% static 'assets/marka.png' %}" alt="">
+          {{ l.name|linebreaksbr }}
+        </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+{% endblock %}

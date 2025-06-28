@@ -1,0 +1,117 @@
+.header{
+    padding: 26px;
+    width: 100%;
+    background: rgb(252, 248, 238);
+}
+.header-block{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-box{
+    display: flex;
+    align-items: center;
+    gap: 49px;
+}
+.nav-list{
+    display: flex;
+    align-items: center;
+    gap: 49px;
+}
+
+.header-title{
+    color: rgb(2, 15, 1);
+    font-family: 'TriodPostnaja' , serif;
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 49px;
+    text-align: left;
+}
+
+.nav-link{
+    color: rgb(2, 15, 1);
+    font-family: 'Literata', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.navbar {
+  background-color: #4F5F4D;
+}
+
+.menu {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-item {
+  position: relative;
+}
+
+.menu-item a {
+  display: block;
+  padding: 20px 25px;
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-size: 'Literata', sans-serif;
+  border-radius: 12px;
+}
+
+.menu-item a:hover,
+.menu-item.active > a {
+  background-color: #3E4C3C;
+  border-radius: 6px 6px 0 0;
+}
+
+.has-submenu:hover > .submenu {
+  display: block;
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #4F5F4D;
+  padding: 10px 0;
+  border-radius: 0 0 6px 6px;
+  min-width: 260px;
+  z-index: 999;
+  font-size: 20px;
+  font-size: 'Literata', sans-serif;
+}
+
+.submenu li {
+  position: relative;
+}
+
+.submenu li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  white-space: nowrap;
+}
+
+.submenu li a:hover {
+  background-color: #3E4C3C;
+}
+
+/* вложенное подменю справа */
+.submenu-right {
+  left: 100%;
+  top: 0;
+  border-radius: 6px;
+}
+
+.submenu li.has-submenu:hover > .submenu-right {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 100%;
+}

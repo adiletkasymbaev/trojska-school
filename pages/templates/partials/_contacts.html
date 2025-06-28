@@ -1,0 +1,54 @@
+{% load static %}
+
+<div class="map-block">
+    <div class="map-box">
+        <img class="MapMaker" src="{% static 'assets/MapMaker.png' %}" alt="">
+        <img class="el-map-img" src="{% static 'assets/el_map-marker.png' %}" alt="">
+        <div class="map-content" style="border-top-right-radius: 12px; border-bottom-right-radius: 12px;">
+            <img class="polygon-2" src="{% static 'assets/Polygon%201.png' %}" alt="">
+
+            <h2 class="map-content-title">
+                Как нас найти:
+            </h2>
+
+            <div class="map-wrap">
+                <svg width="18.847656" height="25.000000" viewBox="0 0 18.8477 25" fill="none"
+                      xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                    <desc>
+                        Created with Pixso.
+                    </desc>
+                    <defs/>
+                    <path id="Vector"
+                          d="M9.42 0C4.21 0 0 4.21 0 9.42C0 11.16 0.33 12.96 1.31 14.25L9.42 25L17.52 14.25C18.41 13.08 18.84 11 18.84 9.42C18.84 4.21 14.62 0 9.42 0ZM9.42 5.45C11.61 5.45 13.39 7.23 13.39 9.42C13.39 11.61 11.61 13.38 9.42 13.38C7.23 13.38 5.45 11.61 5.45 9.42C5.45 7.23 7.23 5.45 9.42 5.45Z"
+                          fill="#913232" fill-opacity="1.000000" fill-rule="nonzero"/>
+                </svg>
+
+                <p class="map-box-text">
+                {{ contacts.address }}
+                </p>
+            </div>
+
+            <p class="map-content-title">{{ contacts.phone }}</p>
+
+            <a href="mailto:{{ contacts.email }}" class="map-red">
+                {{ contacts.email }}
+            </a>
+        </div>
+    </div>
+
+    {% if with_sidebar %}
+    <div class="map-boxing-block">
+        <a href="{% url 'page_schedule_bus' %}" class="map-box-red">
+            <p class="map-red-title">
+                Маршруты <br> транспорта
+            </p>
+        </a>
+
+        <a href="{% url 'page_vacancy' %}" class="map-box-green">
+            <p class="map-red-title">
+                Карьера в ТПШ
+            </p>
+        </a>
+    </div>
+    {% endif %}
+</div>

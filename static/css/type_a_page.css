@@ -1,0 +1,11 @@
+.type-a-paragraph-content > a, .type-a-paragraph-content > ul > li > a {
+  opacity: 1;
+}
+
+.type-a-paragraph-title:not(:first-child) {
+  padding-top: 58px;
+}
+
+.type-a-paragraph-title:first-child {
+  padding-top: 12px;
+}

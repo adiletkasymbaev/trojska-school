@@ -1,0 +1,26 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Информация о школе{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="generic-subtitle">
+    Родителям | Помощь школе  
+  </h2>
+
+  <div class="about-school-page" style="margin-top: 72px; margin-bottom: 64px;">
+    <div class="about-school-page-left">
+      <img src="{{ current_page_help_mini.image.url }}">
+    </div>
+    <div class="about-school-page-right" style="padding-left: 0;">
+      <div>
+        <h1 class="about-school-page-title">{{ current_page_help_mini.title }}</h2>
+        <p class="about-school-page-text">{{ current_page_help_mini.text|safe|linebreaksbr }}</p>
+      </div>
+    </div>
+  </div>
+
+  {% include './partials/_help_school.html' %}
+</div>
+{% endblock %}

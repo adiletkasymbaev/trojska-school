@@ -1,0 +1,101 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Свободные места{% endblock %}
+
+{% block content %}
+<div class="container" style="padding-bottom: 82.87px;">
+    <h3 class="available_spots-title-h3">Родителям | Свободные места</h3>
+
+{% for school in schools %}
+  <div class="available_spots-block">
+    <h2 class="available-spots-title-h2">{{ school.title }}</h2>
+
+    <div class="available-classes-block" style="justify-content: flex-start;">
+      {% for num in school.schools.all %}
+        <p class="available-classes-box" data-grade-id="{{ num.id }}" data-school-id="{{ school.id }}" style="cursor: pointer;">
+          {{ num.number }} класс
+        </p>
+      {% endfor %}
+    </div>
+
+    <div class="available-info-seats-block">
+        <div class="available-info-seats-content">
+            <div class="available-info-seats-grade">
+                <ul class="available-info-ul">
+                    <li>Параллель</li>
+                    <li>Места</li>
+                    <li>Классный руководитель</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="grade-fullness-list">
+      {% for num in school.schools.all %}
+        <div class="grade-fullness-block available-info-seats-box"
+             id="grade-fullness-{{ num.id }}" 
+             data-school-id="{{ school.id }}" 
+             style="display: none;">
+            {% for fullness in num.classes.all %}
+            <ul class="available-info-seats-ul">
+                <li class="available-info-seats-grade-letter">{{ fullness.parallel }}</li>
+                <li class="available-info-seats-grade-button">
+                    <button class="available-info-seats-button {% if fullness.is_full %}green{% else %}red{% endif %}">{% if fullness.is_full %}Есть свободные места{% else %}Свободных мест нет{% endif %}</button>
+                </li>
+                <li class="available-info-seats-li">{{ fullness.teacher.full_name }}</li>
+            </ul>
+            {% empty %}
+            <div class="about-school-page-content" style="width: 100%; height: 100%; display: flex; opacity: 0.6;">
+                Нет информации
+            </div>
+            {% endfor %}
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endfor %}
+
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Для каждой школы отдельно
+    const schools = document.querySelectorAll('.available_spots-block');
+
+    schools.forEach(school => {
+      const schoolId = school.querySelector('.available-classes-box')?.dataset.schoolId;
+      if (!schoolId) return;  // если нет кнопок — пропускаем
+
+      const buttons = school.querySelectorAll('.available-classes-box');
+      const fullnessBlocks = school.querySelectorAll('.grade-fullness-block');
+
+      function hideAll() {
+        fullnessBlocks.forEach(block => block.style.display = 'none');
+      }
+
+      function showBlockById(id) {
+        hideAll();
+        const activeBlock = school.querySelector(`#grade-fullness-${id}`);
+        if (activeBlock) activeBlock.style.display = 'block';
+      }
+
+      buttons.forEach(button => {
+        button.addEventListener('click', () => {
+          showBlockById(button.dataset.gradeId);
+
+          // Снять выделение со всех кнопок, выделить активную
+          buttons.forEach(btn => btn.classList.remove('active'));
+          button.classList.add('active');
+        });
+      });
+
+      // По умолчанию показываем первый класс и выделяем первую кнопку
+      if (buttons.length > 0) {
+        buttons[0].classList.add('active');
+        showBlockById(buttons[0].dataset.gradeId);
+      }
+    });
+  });
+</script>
+{% endblock %}

@@ -1,0 +1,41 @@
+.attestation-link-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  padding-top: 80px;
+  width: 100%;
+}
+
+.attestation-link-item {
+  height: 229px;
+  background: #CFD1C4;
+  border-radius: 8px; 
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center; 
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0%;
+  cursor: pointer;
+  transition: all .2s;
+  overflow: hidden;
+  color: #020F01;
+}
+
+.attestation-link-item > img {
+  position: absolute;
+  top: 0;
+  right: 34px;
+  transition: all .2s;
+}
+
+.attestation-link-item:hover {
+  font-size: 26px;
+}
+
+.attestation-link-item:hover > img {
+  top: -10px;
+}

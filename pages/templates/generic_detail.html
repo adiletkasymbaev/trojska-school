@@ -1,0 +1,40 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %} {{ data.title }} {% endblock %}
+
+{% block content %}
+<div class="administrative">
+  <div class="container">
+    <h2 class="generic-subtitle">
+      {% if parent.is_parent %}
+      О нас | {{ parent.title }}
+      {% else %}
+      О нас |  <a href="{% url parent.link %}" class="generic-breadcrumb generic-subtitle">{{ parent.title }}</a> | {{ data.title }}
+      {% endif %}
+    </h2>
+    <h1 class="generic-title">
+      {{ data.title }} 
+    </h1>
+
+    <div class="administrative-detail">
+      <p class="administrative-item-description">{{ data.description|linebreaksbr }}</p>
+      {% if data.links.all %}
+      <div class="administrative-detail-links">
+        {% for link in data.links.all %}
+        <a href="{{ link.url }}" class="administrative-detail-link">
+          <div class="administrative-detail-link-arrow"> 
+            <img src="{% static 'assets/link_arrow.png' %}" alt="Иконка перехода по ссылке">
+          </div>
+
+          <div class="administrative-detail-link-text">
+            {{ link.name }}
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+{% endblock %}

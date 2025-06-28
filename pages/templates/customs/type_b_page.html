@@ -1,0 +1,22 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %} {{ current_page_info.page_title }} {% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="generic-subtitle">
+    {% if current_page_info.path %}
+      {{ current_page_info.category }} | {{ current_page_info.path }}
+    {% else %}
+      {{ current_page_info.category }} | {{ current_page_info.page_title }}
+    {% endif %}
+  </h2>
+  <h1 class="generic-title" style="color: {{ current_page_info.title_color }};">
+    {{ current_page_info.page_title }} 
+  </h1>
+  <div class="administrative-detail">
+    <div class="administrative-item-description">{{ current_page_info.description|safe|linebreaksbr }}</div>
+  </div>
+</div>
+{% endblock %}

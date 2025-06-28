@@ -1,0 +1,116 @@
+.bus-schedule-buttons{
+    padding-top: 35px;
+    display: flex;
+    gap: 15px;
+}
+.route-button{
+    width: 261px;
+    height: 40px;
+    margin-top: 8px;
+}
+
+.bus-schedule-title{
+    padding-top: 39px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 100%; /* 40px */
+    letter-spacing: 0%;
+}
+
+.bus-schedule-content{
+    padding-top: 40px;
+    display: flex;
+    gap: 30px;
+
+}
+
+.bus-map{
+    padding-top: 30px;
+    width: 827px;
+    overflow: hidden;
+}
+
+.bus-map > img {
+    width: 100%;
+    border-left: 8px solid #4F5F4D;
+}
+
+.time{
+
+}
+
+.bus-stops-list {
+    list-style: decimal;
+    padding-left: 24px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.bus-stops-list {
+    counter-reset: stop;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 0;
+}
+
+.bus-stops-list li {
+    width: 445.0000039935094px;
+    margin-top: 13px;
+    counter-increment: stop;
+    position: relative;
+    padding-left: 30px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 17px;
+    font-family: 'Literata', serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 100%;
+    letter-spacing: 0%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.bus-stops-list li:last-child {
+    border-bottom: none;
+}
+
+.bus-stops-list li::before {
+    content: counter(stop) ".";
+    position: absolute;
+    left: 0;
+    font-family: 'Literata', serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%; /* = 16px */
+    letter-spacing: 0%;
+
+}
+
+.bus-schedule-title-thy{
+    padding-top: 104px;
+}
+
+
+.time {
+    min-width: 55px;
+    font-family: 'Literata', serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000;
+}
+
+.stop-name {
+    font-family: 'Literata', serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    color: #000;
+}

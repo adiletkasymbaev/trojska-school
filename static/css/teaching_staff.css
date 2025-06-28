@@ -1,0 +1,75 @@
+.teaching_staff-img{
+    width: 443px;
+    height: 588px;
+}
+.teaching_staff-block{
+    padding-top: 80px;
+}
+
+.teaching-staff-h2{
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 120%;
+    letter-spacing: 0%;
+}
+
+.teaching-staff-h4{
+    font-family: 'Literata' sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    padding-bottom: 10px;
+}
+
+.teaching_staff-text-contenting{
+    padding-top: 40px;
+}
+
+.teaching-btn{
+    margin-top: 20px;
+    width: 206.73460388183594px;
+    height: 40.22038269042969px;
+    border-radius: 24px;
+    border-width: 2px;
+}
+.teaching-btn-thy{
+    margin-left: 10px;
+    width: 151.73460388183594px;
+    height: 40.22038269042969px;
+    border-radius: 24px;
+    border-width: 2px;
+}
+
+.teaching-staff-text{
+    font-family: 'Literata', sans-serif;
+    color: #4F5F4D;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 130%;
+    letter-spacing: 10%;
+}
+
+.teaching_staff-block{
+    display: flex;
+    gap: 70px   ;
+}
+
+.teaching_staff-right{
+    border-left:15px solid #4F5F4D ;
+    height: 588px;
+}
+
+.teaching-staff-texting{
+    padding-top: 10px;
+    font-family: 'Literata', sans-serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0%;
+}
+
+.teaching_staff-text-content {
+    padding-bottom: 26px;
+}

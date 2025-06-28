@@ -1,0 +1,22 @@
+.header-site{
+    background: rgb(79, 95, 77);
+    height: 56px;
+    display: flex;
+    align-items: center;
+}
+
+.header-site-list{
+    display: flex;
+    justify-content: space-around;
+    gap: 49px;
+    align-items: center;
+}
+
+.header-nav-link{
+    color: rgb(252, 248, 238);
+    font-family: 'Literata', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+    text-align: left;
+}

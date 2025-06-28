@@ -1,0 +1,38 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Вакансии{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="generic-subtitle">
+    Педагогам | Вакансии
+  </h2>
+
+  <h1 class="generic-title" style="margin-bottom: 72px;">
+    <span style="color: #4F5F4D;">Что отличает одну школу
+    <br>
+    от другой? -</span> люди!
+  </h1>
+
+  {% if vacancies %}
+  <div class="vacancy-list">
+    {% for vacancy in vacancies %}
+    <a href="{{ vacancy.url }}" class="vacancy-item">
+      <img src="{% static 'assets/link_arrow.png' %}" alt="Иконка перехода по ссылке" style="width: 66px;">
+      <h3 class="generic-title" style="margin-bottom: 42px;">{{ vacancy.title }}</h3>
+      <div class="vacancy-tags">
+        {% for tag in vacancy.tags.all %}
+        <div class="generic-category-item">{{ tag.name }}</div>
+        {% endfor %}
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+  {% else %}
+  <div class="about-school-page-content" style="margin-bottom: 570px;">
+    На данный момент штат Троицкой Православной школы укомплектован.
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

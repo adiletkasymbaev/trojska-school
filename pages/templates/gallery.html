@@ -1,0 +1,44 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Галерея{% endblock %}
+
+{% block content %}
+<div class="news">
+  <div class="container">
+    <h2 class="generic-subtitle">
+        О нас |  Галерея
+    </h2>
+    <h1 class="generic-title">
+        Галерея
+    </h1>
+    <div class="generic-category-list">
+        <a href="?category=" class="generic-category-item">
+          Все фото и видео
+        </a>
+        {% for i in category %}
+        <a href="?category={{ i.id }}" class="generic-category-item">
+        {{ i.name }}
+        </a>
+        {% endfor %}
+    </div>
+
+    <div class="gallery-list">
+      {% for i in gallery %}
+      <a href="{% url 'page_gallery_detail' i.id %}" class="gallery-item">
+        <div class="gallery-item-image">
+          <img src="{{ i.first_image_url }}" alt="">
+        </div>
+        <h3 class="gallery-item-title">
+          {{ i.short_title }}
+        </h3>
+        <div class="gallery-item-wrap">
+          <span class="gallery-item-date">{{ i.created_at }}</span>
+          <span class="gallery-item-category">#{{ i.category }}</span>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

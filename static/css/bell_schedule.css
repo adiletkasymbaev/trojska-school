@@ -1,0 +1,122 @@
+.bell-schedule-h2 {
+    padding-top: 40px;
+    font-family: 'Playfair Display', serif;
+    color: #913232;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 120%;
+    letter-spacing: 0%;
+}
+
+.schedule-list {
+    padding-top: 40px;
+}
+
+.schedule-row {
+    width: 743px;
+    margin: 15px;
+    padding-top: 9px;
+    padding-bottom: 15px;
+    font-family: 'Literata', serif;
+    font-weight: 400;
+    font-size: 22px;
+    line-height: 120%;
+    color: #020F01;
+    display: flex;
+    justify-content: flex-start;
+    gap: 60px;
+    border-bottom: 1px solid #4F5F4D;s
+}
+
+.schedule-row:last-child {
+    border-bottom: none;
+}
+
+.schedule-row-no-border {
+    border-bottom: none;
+}
+
+.schedule-time {
+    width: 180px;
+    flex-shrink: 0;
+}
+
+.schedule-event {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.schedule-event-with-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%; /* лучше 100%, чем 117% */
+    gap: 15px; /* небольшой gap между текстом и кнопкой */
+}
+
+.event-text {
+    white-space: normal; /* Позволяет тексту переноситься на несколько строк */
+    width: 300px; /* фиксируем ширину под текст */
+}
+
+.event-button {
+    flex-shrink: 0; /* чтобы кнопка не сжималась */
+}
+
+
+.small-button {
+    width: 125px;
+    height: 40px;
+    border: 1.56px solid #4F5F4D;
+    border-radius: 18.67px;
+    background: none;
+    font-family: 'Literata', serif;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.5s, color 0.5s;
+}
+.small-button:hover {
+    border: 1.56px solid #4F5F4D;
+    border-radius: 18.67px;
+    color: #ffffff;
+    background:#4F5F4D ;
+    font-family: 'Literata', serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.schedule-note {
+    font-size: 16px;
+    color: #4F5F4D;
+}
+
+.schedule-event-with-note {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 11.17px;
+}
+
+.schedule-note-box {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    padding: 4px 35px;
+    text-align: center;
+    background: #FCF8EE;
+    font-family: 'Literata', serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0;
+    border-radius: 6px;
+    z-index: 5;
+}
+
+.event-text{
+
+}
+
+

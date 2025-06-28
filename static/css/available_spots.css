@@ -1,0 +1,144 @@
+.available_spots-blocking {
+    margin-top: 110px;
+}
+
+.available-info-seats-box {
+    max-width: 1092px;
+    padding-top: 20px;
+}
+
+.available-info-seats-ul {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 38px;
+    font-family: 'Literata', serif;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 120%;
+    letter-spacing: 0%;
+}
+
+/* 🔧 заменяем nth-child на классы */
+.available-info-seats-grade-letter {
+    width: 30px;
+    text-align: center;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.available-info-seats-grade-button {
+    width: 330px;
+    flex-shrink: 0;
+    white-space: nowrap;
+}
+
+.available-info-seats-li {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.available-info-seats-button {
+    border: 2px solid #4F5F4D;
+    border-radius: 24px;
+    width: 324.47px;
+    height: 47.44px;
+    font-family: 'Literata', serif;
+    color: black;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    letter-spacing: 0%;
+    background: none;
+    transition: background 0.5s, color 0.5s;
+}
+
+.available-info-seats-button.green {
+    border: 2px solid #4F5F4D;
+    background: #4F5F4D;
+    color: #ffffff;
+    text-align: center;
+}
+
+.available-info-seats-button.red {
+    background: #913232 !important;
+    border: none !important;
+    color: #ffffff !important;
+    text-align: center;
+}
+
+/* Классный руководитель */
+.available-info-seats-content {
+    max-width: 888px;
+    padding-top: 55px;
+}
+
+.available-info-ul {
+    width: 966px;
+    display: flex;
+    justify-content: flex-start;
+    gap: 207px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+    border-bottom: 1.54px solid #CFD1C4;
+    padding-bottom: 25px;
+}
+
+/* Классы */
+.available-classes-block {
+    max-width: 580px;
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+}
+
+.available-classes-box {
+    margin-top: 37px;
+    width: 128.47px;
+    height: 40.22px;
+    border: 2px solid #4F5F4D;
+    border-radius: 24px;
+    text-align: center;
+    align-content: center;
+    font-family: 'Literata', serif;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 120%;
+    transition: background 0.5s, color 0.5s;
+}
+
+.available-classes-box:hover {
+    background: #4F5F4D;
+    color: #ffffff;
+    transition: 0.5s;
+}
+
+/* Заголовки */
+.available_spots-title-h3 {
+    padding-top: 40px;
+    color: #020F01;
+    opacity: 50%;
+    font-family: 'Literata', serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%;
+}
+
+.available-spots-title-h2 {
+    padding-top: 70px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 120%;
+}
+
+.info-seats-on-text-change {
+    justify-content: flex-start !important;
+    gap: 29px !important;
+}
+

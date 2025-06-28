@@ -1,0 +1,57 @@
+.faculty-block-btn{
+    display: flex;
+    gap: 20px;
+    max-width: 1110px;
+}
+.faculty{
+    padding-top: 40px;
+}
+.faculty-btn{
+    margin-top: 10px;
+    width: 305.734619140625px;
+    height: 40.22038269042969px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0%;
+    font-size:16px ;
+}
+.faculty-grid-profiles {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 колонки */
+    gap: 30px; /* расстояние между карточками */
+}
+
+
+.faculty-block-profile{
+    padding-top: 77px;
+}
+.faculty-title-h2{
+    font-family: 'Playfair Display', serif;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 100%; /* = 40px */
+    letter-spacing: 0;
+}
+
+.faculty-content-profile{
+    margin-top: 35px;
+    text-align: center;
+    align-content: center;
+    background: #4F5F4D;
+    width: 270px;
+    height: 360px;
+}
+
+.faculty-box-profile-title{
+    font-family: 'Literata', serif;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%; /* 28.8px */
+    letter-spacing: 0;
+    color: #FCF8EE;
+}
+
+.faculty-box-profile-title-black{
+    color: #020F01;
+    padding-top: 10px;
+}

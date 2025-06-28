@@ -1,0 +1,47 @@
+.subject-weeks-grid {
+     display: grid;
+     grid-template-columns: repeat(5, 1fr); /* 5 карточек в строку */
+     padding-top: 40px;
+     justify-items: flex-start
+ }
+
+.subject-card {
+    position: relative;
+    width: 200px; /* Ширина карточки (можешь подстроить) */
+    height: 300px; /* Высота карточки */
+}
+
+
+
+.subject-card{
+    position: relative;
+
+}
+
+.subject-bg{
+    position: absolute;
+
+}
+
+.subject-name{
+    position: absolute;
+    padding: 38px   ;
+    font-family: 'Literata', serif;
+    color: #FCF8EE;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 120%; /* 28.8px */
+    letter-spacing: 0;
+}
+
+.subject-arrow {
+    position: absolute;
+    top: 220px;
+    left: 151px;
+    z-index: 5;
+}
+.subject-arrow-thy{
+    position: absolute;
+    top: 214px;
+    left: 159px;
+}

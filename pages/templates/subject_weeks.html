@@ -1,0 +1,31 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Предметные недели{% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="generic-subtitle">
+    Учащимся | Предметные недели
+  </h2>
+
+  <div class="subject-list">
+    {% for sb in subjects %}
+    <a 
+      class="subject-item"
+      href="{% url 'page_subjects_detail' sb.id %}"
+    >
+      <div class="subject-item-border" style="background: {{ sb.color }};"></div>
+      <div class="subject-item-background" style="background: {{ sb.color }};"></div>
+
+      <span class="subject-item-name">{{ sb.name }}</span>
+
+      <div class="subject-item-button">
+        <div style="background: {{ sb.color }};"></div>
+        <img src="{% static 'assets/arrow.png' %}" alt="">
+      </div>
+    </a>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

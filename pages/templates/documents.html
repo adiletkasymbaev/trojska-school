@@ -1,0 +1,41 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Документы{% endblock %}
+
+{% block content %}
+<div class="administrative">
+  <div class="container">
+    <h2 class="generic-subtitle">
+      Родителям | Документы
+    </h2>
+    <h1 class="generic-title">
+      Документы 
+    </h1>
+
+    <div class="administrative-content">
+      <div class="administrative-names" style="width: 531px; gap: 37px;">
+        {% for control in administrative_controls %}
+        <a href="{% url 'page_documents_detail' control.id %}" class="administrative-name">
+          <span>{{ control.get_roman_id }}.</span>
+
+          <span style="text-align: right;">{{ control.title }}</span>
+        </a>
+        {% endfor %}  
+      </div>
+
+      <div class="administrative-list">
+        {% for control in administrative_controls %}
+        <div class="administrative-item">
+          <h3 class="administrative-item-title">{{ control.title }}</h3>
+          <p class="administrative-item-description">{{ control.get_short_description|linebreaksbr }}</p>
+          <a href="{% url 'page_documents_detail' control.id %}" class="administrative-link"> 
+            <img src="{% static 'assets/link_arrow.png' %}" alt="Иконка перехода по ссылке">
+          </a>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

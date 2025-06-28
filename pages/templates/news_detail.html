@@ -1,0 +1,24 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %} {{ current_page_info.title }} {% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="generic-subtitle">
+    О нас | <a class="generic-breadcrumb generic-subtitle" href="{% url 'page_news' %}">Новости</a> | {{ current_page_info.title }}
+  </h2>
+  <div class="news-image-wrap">
+    <img src="{{ current_page_info.image.url }}" alt="">
+  </div>
+  <h1 class="generic-title">
+    {{ current_page_info.title }} 
+  </h1>
+  <p class="news-date">
+    {{ current_page_info.created_at }}
+  </p>
+  <div class="administrative-detail">
+    <div class="administrative-item-description">{{ current_page_info.description|safe|linebreaksbr }}</div>
+  </div>
+</div>
+{% endblock %}

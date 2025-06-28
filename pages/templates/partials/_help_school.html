@@ -1,0 +1,33 @@
+{% load static %}
+
+<div class="about-school-support">
+  <h1 class="about-school-support-title">{{ current_page_help.title }}</h1>
+  <div class="about-school-support-wrap">
+    {% for help in current_page_help.schoolinformationhelpitem_set.all %}
+    <div class="about-school-support-block">
+      <div class="about-school-support-int">{{ help.integer }}</div>
+      <div class="about-school-support-subtitle">{{ help.subtitle }}</div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<div class="about-school-accordion">
+  <h1 class="about-school-accordion-title">Как Вы можете помочь?</h1>
+  <div class="about-school-accordion-content">
+    {% for donate in current_page_donation %}
+    <div class="about-school-accordion-item">
+      <input type="radio" name="accordion" class="accordion-radio">
+      <div class="about-school-accordion-item-hat">
+        <span class="about-school-accordion-item-title">{{ donate.title }}</span>
+        <div class="about-school-accordion-item-arrow">
+          <img src="{% static 'assets/arrow.png' %}" alt="">
+        </div>
+      </div>
+      <div class="about-school-accordion-item-pants">
+        {{ donate.description|safe|linebreaksbr }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>        
+</div>

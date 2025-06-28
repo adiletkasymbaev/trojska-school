@@ -1,0 +1,33 @@
+.vacancy-list {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+  margin-bottom: 189px;
+}
+
+.vacancy-item {
+  background-color: #CFD1C480;
+  border-left: 15px solid #4F5F4D;
+  border-radius: 6px;
+  padding-left: 32px;
+  padding-bottom: 16.78px;
+  padding-right: 25.8px;
+  padding-top: 12px;
+  position: relative;
+}
+
+.vacancy-tags {
+  display: flex;
+  gap: 14px;
+}
+
+.vacancy-item > img {
+  position: absolute;
+  bottom: 22.89px;
+  right: 24.72px;
+  transition: all .2s;
+}
+
+.vacancy-item:hover > img {
+  transform: translateY(-10px); 
+}

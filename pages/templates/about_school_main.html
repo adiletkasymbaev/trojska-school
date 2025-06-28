@@ -1,0 +1,86 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Информация о школе{% endblock %}
+
+{% block content %}
+<div class="about-school">
+  <div class="about-school-hero">
+    <div class="about-school-hero-image-wrap">
+      <img src="{{ current_page_info.image.url }}" alt="" class="about-school-hero-image">
+    </div>
+
+    <div class="container">
+      <h1 class="about-school-hero-title">
+        {{ current_page_info.hero_title }}
+      </h1>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="generic-subtitle">
+      О нас | Информация о школе  
+    </h2>
+  </div>
+
+    <div class="about-school-container">
+
+      <div class="about-school-list">
+        {% for item in current_page_info.schoolinformationmainitem_set.all %}
+        <div class="about-school-page">
+          <div class="about-school-page-left">
+            <img src="{{ item.image.url }}" onload="checkImageOrientation(this)" alt="">
+          </div>
+          <div class="about-school-page-right">
+            <div>
+              {% if item.subtitle %}
+                <h2 class="about-school-page-subtitle">{{ item.subtitle }}</h2>
+              {% endif %}
+              {% if item.title %}
+                <h1 class="about-school-page-title">{{ item.title }}</h2>
+              {% endif %}
+              <p class="about-school-page-text">{{ item.text|safe|linebreaksbr }}</p>
+            </div>
+            {% if item.link_text %}
+            <a href="{{ item.link_url }}" class="about-school-page-link">
+              <div class="administrative-detail-link-text">
+                {{ item.link_text }}
+              </div>
+              <img src="{% static 'assets/link_arrow.png' %}" alt="Иконка перехода по ссылке">
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+        <div class="about-school-page">
+          <a href="{% url 'page_school_information_detail' 3 %}" class="about-school-page-left">
+            <img src="{{ current_page_help_mini.image.url }}">
+          </a>
+          <div class="about-school-page-right">
+            <div>
+              <h1 class="about-school-page-title">{{ current_page_help_mini.title }}</h2>
+              <p class="about-school-page-text">{{ current_page_help_mini.text|safe|linebreaksbr }}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include './partials/_help_school.html' %}
+
+      
+    </div>
+</div>
+
+<script>
+  function checkImageOrientation(img) {
+    const parent = img.closest('.about-school-page-left');
+    if (!parent) return;
+
+    if (img.naturalHeight > img.naturalWidth) {
+      parent.classList.add('vertical');
+    } else {
+      parent.classList.add('horizontal');
+    }
+  }
+</script>
+{% endblock %}

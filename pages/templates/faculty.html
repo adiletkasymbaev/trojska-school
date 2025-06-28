@@ -1,0 +1,64 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Педагогический состав{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <h3 class="available_spots-title-h3">О нас | Педагогический состав</h3>
+        <div class="faculty">
+            <div class="bus-schedule-buttons" style="display: flex; flex-wrap: wrap;">
+                <a href="?tag=" class="generic-category-item" style="width: auto; padding: 8px 20px;">Все</a>
+                {% for t in tags %}
+                <a href="?tag={{ t.name }}" class="generic-category-item" style="width: auto; padding: 8px 20px;">{{ t.name }}</a>
+                {% endfor %}
+            </div>
+
+            {% if teachers_by_tag %}
+                <div class="faculty-block-profile">
+                    <h2 class="faculty-title-h2">{{ selected_tag }}</h2>
+
+                    <div class="faculty-grid-profiles">
+                    {% for teacher in teachers_by_tag %}
+                        <a class="faculty-box-profile" href="{% url 'page_teachers_detail' teacher.id %}">
+                        {% if teacher.image %}
+                            <div class="faculty-content-profile" style="overflow: hidden;">
+                            <img src="{{ teacher.image.url }}" alt="" style="width: 100%;">
+                            </div>
+                        {% else %}
+                            <div class="faculty-content-profile">
+                            <p class="faculty-box-profile-title">Фото</p>
+                            </div>
+                        {% endif %}
+                        <p class="faculty-box-profile-title faculty-box-profile-title-black">{{ teacher.full_name }}</p>
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+            {% else %}
+                {% for category, teacher_list in categories_with_teachers %}
+                <div class="faculty-block-profile">
+                    <h2 class="faculty-title-h2">{{ category.name }}</h2>
+
+                    <div class="faculty-grid-profiles">
+                    {% for teacher in teacher_list %}
+                        <a class="faculty-box-profile" href="{% url 'page_teachers_detail' teacher.id %}">
+                        {% if teacher.image %}
+                            <div class="faculty-content-profile" style="overflow: hidden;">
+                            <img src="{{ teacher.image.url }}" alt="" style="width: 100%;">
+                            </div>
+                        {% else %}
+                            <div class="faculty-content-profile">
+                            <p class="faculty-box-profile-title">Фото</p>
+                            </div>
+                        {% endif %}
+                        <p class="faculty-box-profile-title faculty-box-profile-title-black">{{ teacher.full_name }}</p>
+                        </a>
+                    {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+    </div>
+{% endblock %}

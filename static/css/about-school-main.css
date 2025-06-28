@@ -1,0 +1,347 @@
+.about-school-hero {
+  height: 617px;
+  width: 100%;
+  position: relative;
+}
+
+.about-school-hero-image-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.about-school-hero-image-wrap::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: black;
+  opacity: 0.65;
+  top: 0;
+  left: 0;
+}
+
+.about-school-hero-image {
+  width: 100%;
+}
+
+.about-school-hero-title {
+  position: relative;
+  z-index: 20;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: white;
+  padding-top: 247px;
+  width: 997px;
+}
+
+.about-school > .container > .generic-subtitle {
+  padding-top: 48px;
+  padding-bottom: 56px;
+}
+
+.about-school-container {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.about-school-page {
+  width: 100%;
+  display: flex;
+}
+
+.about-school-page:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.about-school-page-left {
+  width: 50%;
+  height: 545px;
+  overflow: hidden;
+}
+
+.about-school-page-left.horizontal > img {
+  height: 100%;
+}
+
+.about-school-page-left.vertical {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-school-page-left.vertical > img {
+  width: 100%;
+}
+
+.about-school-page-right {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 78px;
+  padding-right: 49px;
+}
+
+.about-school-page:nth-child(even) > .about-school-page-left > img {
+  padding-left: 49px;
+  padding-right: 78px;
+}
+
+.about-school-page-subtitle {
+  color: #020F01;
+  font-size: 24px;
+  font-weight: 600;
+  font-family: 'Literata', sans-serif;
+  opacity: 0.6;
+  margin-bottom: 48px;
+}
+
+.about-school-page-title {
+  color: #913232;
+  font-size: 40px;
+  font-weight: 500;
+  letter-spacing: 0%;
+  margin-bottom: 48px;
+}
+
+.about-school-page-text {
+  opacity: 0.6;
+  font-size: 24px;
+  font-family: 'Literata', sans-serif;
+}
+
+.about-school-page-link {
+  display: flex;
+  gap: 144px
+}
+
+.about-school-list {
+  display: flex;
+  flex-direction: column;
+  gap: 106px;
+  margin-bottom: 65px;
+}
+
+.about-school-page-link > .administrative-detail-link-text, .about-school-page-link > img {
+  transition: all .2s;
+}
+
+.about-school-page-link:hover > .administrative-detail-link-text {
+  text-decoration: none;
+}
+.about-school-page-link:hover > img {
+  transform: translateX(20%);
+}
+
+.about-school-support {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  padding: 0 148px;
+  margin-bottom: 56px;
+}
+
+.about-school-support-title {
+  font-weight: 500;
+  font-size: 40px;
+  color: #020F01;
+  letter-spacing: 0%;
+  text-align: center;
+}
+
+.about-school-support-wrap {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.about-school-support-block {
+  background: #CFD1C4;
+  width: 388px;
+  height: 256px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+  padding: 32px;
+  border-radius: 8px;
+}
+
+.about-school-support-int {
+  color: #913232;
+  font-size: 106.78px;
+  font-weight: 400;
+  font-family: 'Literata', sans-serif;
+  line-height: 120%;
+}
+
+.about-school-support-subtitle {
+  color: #020F01;
+  letter-spacing: 0%;
+  font-size: 32px;
+  font-weight: 400;
+  font-family: 'Literata', sans-serif;
+  opacity: 0.6;
+  text-align: center;
+  line-height: 100%;
+}
+
+.about-school-accordion {
+  padding: 100px;
+}
+
+.about-school-accordion-content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.about-school-accordion-title {
+  color: #4F5F4D;
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: 0%;
+  margin-bottom: 48px;
+}
+
+.about-school-accordion-item-hat {
+  display: flex;
+  width: 100%;
+  padding: 26px 30px;
+  justify-content: space-between;
+  background-color: #CFD1C4;
+  border-radius: 8px;
+}
+
+.about-school-accordion-item-pants {
+  font-size: 24px;
+  font-family: 'Literata', sans-serif;
+  background: #CFD1C4;
+  max-height: 0;
+  transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+}
+
+.about-school-accordion-item-title {
+  font-size: 32px;
+  font-weight: 400;
+  letter-spacing: 0%;
+  line-height: 100%;
+  font-family: 'Literata', sans-serif;
+}
+
+.about-school-accordion-item-arrow {
+  width: 38px;
+  height: 38px;
+  background-color: #4F5F4D;
+  border-radius: 100%;
+}
+
+.accordion-radio {
+  position: absolute;
+  width: 100%;
+  height: 90px;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.about-school-accordion-item {
+  position: relative;
+  overflow: hidden;
+}
+
+.accordion-radio:checked ~ .about-school-accordion-item-hat {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+.accordion-radio:checked ~ .about-school-accordion-item-pants {
+  max-height: 1000px;
+  transition: max-height 0.2s ease-in, padding 0.2s ease-in;
+  padding: 0 32px 38px 32px;
+}
+
+.about-school-accordion-item-arrow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all .2s;
+}
+
+.accordion-radio:checked ~ .about-school-accordion-item-hat > .about-school-accordion-item-arrow {
+  transform: rotate(90deg);
+}
+
+.about-school-page-content {
+  font-family: 'Literata', sans-serif;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  letter-spacing: 0%;
+  color: #020F01;
+}
+
+.about-school-hero-title.no-limit {
+  width: auto;
+  padding-top: 369px;
+}
+
+.about-school-hero-subtitle {
+  margin-top: 7px;
+  position: relative;
+  z-index: 20;
+  font-size: 40px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 0%;
+  border-left: 9px solid #4F5F4D;
+  padding-top: 26px;
+  padding-bottom: 23px;
+  padding-left: 23px;
+}
+
+.history-top {
+  background: #CFD1C4;
+  padding-bottom: 82px;
+  margin-bottom: 56px;
+}
+
+.history-top-wrap {
+  display: flex;  
+  gap: 18px;
+}
+
+.history-top-left {
+  width: 40%;
+}
+
+.history-top-left > .generic-title {
+  margin-top: 64px;
+}
+
+.history-top-left > .generic-subtitle {  
+  color: #4F5F4D;
+}
+
+.history-top-right {
+  width: 60%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 677px;
+}

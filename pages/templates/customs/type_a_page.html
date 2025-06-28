@@ -1,0 +1,35 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %} {{ current_page_info.page_title }} {% endblock %}
+
+{% block content %}
+<div class="container">
+  <h2 class="generic-subtitle">
+    {% if current_page_info.path %}
+      {{ current_page_info.category }} | {{ current_page_info.path }}
+    {% else %}
+      {{ current_page_info.category }} | {{ current_page_info.page_title }}
+    {% endif %}
+  </h2>
+
+  {% if current_page_info.paragraphs.all|length > 1 %}
+  <div class="bus-schedule-buttons" style="display: flex; flex-wrap: wrap;">
+    {% for par in current_page_info.paragraphs.all %}
+    <a href="#{{ par.title }}" class="generic-category-item" style="width: auto; padding: 8px 20px;">{{ par.title }}</a>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  <div class="type-a-paragraphs">
+    {% for par in current_page_info.paragraphs.all %}
+    <div class="type-a-paragraph">
+      <h2 class="bus-schedule-title type-a-paragraph-title" style="color: #4F5F4D; margin-bottom: 31px;" id="{{ par.title }}">{{ par.title }}</h2>
+      <div class="type-a-paragraph-content about-school-page-content" style="font-weight: 400;">
+        {{ par.description|safe|linebreaksbr }}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}

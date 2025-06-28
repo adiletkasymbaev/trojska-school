@@ -1,0 +1,65 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %} {{ data.title }} {% endblock %}
+
+{% block content %}
+<div class="administrative">
+  <div class="container">
+    <h2 class="generic-subtitle">
+      {% if parent.is_parent %}
+      Родителям | {{ parent.title }}
+      {% else %}
+      Родителям | <a href="{% url parent.link %}" class="generic-breadcrumb generic-subtitle">{{ parent.title }}</a> | {{ data.title }}
+      {% endif %}
+    </h2>
+    <h1 class="generic-title">
+      {{ data.title }} 
+    </h1>
+
+    {% if data.title == "Работа с детьми с особыми потебностями" %}
+    <div class="about-school-page-content" style="padding: 48px 0; padding-top: 30px;">
+      «Если я чем-то на тебя не похож, я этим вовсе не оскорбляю тебя, а, напротив, одаряю».
+      <br>
+      Антуан де Сент-Экзюпери
+    </div>
+
+    <div class="generic-category-list">
+      <a href="{% url 'page_documents' %}" class="generic-category-item">Общая информация</a>
+      <p onclick="scrollToCategoryItem()" class="generic-category-item">Документы</p>
+    </div>
+    {% endif %}
+
+    <div class="administrative-detail">
+      <div class="about-school-page-content all-links-black">{{ data.description|safe|linebreaksbr }}</div>
+      {% if data.links.all %}
+      <div class="administrative-detail-links">
+        {% for link in data.links.all %}
+        <a href="{{ link.url }}" class="administrative-detail-link">
+          <div class="administrative-detail-link-arrow" style="width: 5%; height: auto;"> 
+            <img src="{% static 'assets/link_arrow.png' %}" alt="Иконка перехода по ссылке" style="width: 57px;">
+          </div>
+
+          <div class="administrative-detail-link-text" style="width: 95%;">
+            {{ link.name }}
+          </div>
+        </a>
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script>
+  function scrollToCategoryItem() {
+    const target = document.querySelector('.generic-inner-title');
+    if (target) {
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+</script>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Расписание звонков и автобусов{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="available_spots-title-h3">Родителям | Расписание звонков и автобусов</div>
+    <div class="bell-schedule-block">
+        <h2 class="bell-schedule-h2">Расписание звонков</h2>
+
+        <div class="bell-schedule-list">
+            <div class="schedule-list">
+                {% for sc in schedules %}
+                <div class="schedule-row">
+                    <div class="schedule-time">{{ sc.time_start }} — {{ sc.time_end }}</div>
+                    <div class="schedule-event {% if sc.duration %}schedule-event-with-button{% endif %} {% if sc.break_after %}schedule-event-with-note{% endif %}">
+                        <div class="event-text">
+                            {% if sc.is_red %}
+                            <strong class="red">{{ sc.text }}</strong>
+                            {% else %}
+                            {{ sc.text }}
+                            {% endif %}
+                        </div>
+                        {% if sc.duration %}
+                        <div class="event-button"><button class="small-button">{{ sc.duration }} минут</button></div>
+                        {% endif %}
+
+                        {% if sc.break_after %}
+                        <div class="schedule-note-box">Перемена {{ sc.break_after }} минут</div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

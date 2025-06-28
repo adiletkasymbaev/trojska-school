@@ -1,0 +1,36 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}История Казанской церкви{% endblock %}
+
+{% block content %}
+<div class="history">
+  <div class="history-top">
+    <div class="container">
+      <h2 class="generic-subtitle">
+        О нас | <a href="{% url 'page_school_information_main' %}" class="generic-breadcrumb generic-subtitle">Информация о школе</a> | История Казанской церкви
+      </h2>
+
+      <div class="history-top-wrap">
+        <div class="history-top-left">
+          <h1 class="generic-title">
+            {{ current_page_info.title }}
+          </h1>
+          <h2 class="generic-subtitle">
+            {{ current_page_info.subtitle }}
+          </h2>
+        </div>
+        <div class="history-top-right">
+          <img src="{{ current_page_info.image.url }}" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="container about-school-page-content">
+    {{ current_page_info.content|safe|linebreaksbr }}
+  </div>
+</div>
+{% endblock %}

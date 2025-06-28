@@ -1,0 +1,78 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Новости{% endblock %}
+
+{% block content %}
+<div class="news">
+  <div class="container">
+    <h2 class="generic-subtitle">
+        О нас |  Новости
+    </h2>
+    <h1 class="generic-title">
+        Новости школы
+    </h1>
+    <div class="generic-category-list">
+        <a href="?category=" class="generic-category-item">
+            Все новости
+        </a>
+        {% for i in category %}
+        <a href="?category={{ i.id }}" class="generic-category-item">
+        {{ i.name }}
+        </a>
+        {% endfor %}
+    </div>
+
+    <div class="main-articles-list">
+        {% if articles.0 %}
+        <div class="main-article" style="background: url('{{ articles.0.image.url }}');">
+            <div class="main-article-bottom">
+                {% if articles.1 %}
+                <div class="main-article-bottom--bump"></div>
+                {% endif %}
+                <h3 class="main-article-title">{{ articles.0.title }}</h3>
+                <div class="main-article-additional">
+                    <a href="{% url 'page_news_detail' articles.0.id %}" class="more-btn">Подробнее</a>
+                    <p class="main-article-date">
+                        {{ articles.0.created_at }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% if articles.1 %}
+        <div class="main-article" style="background: url('{{ articles.1.image.url }}');">
+            <div class="main-article-bottom">
+                <h3 class="main-article-title">{{ articles.1.title }}</h3>
+                <div class="main-article-additional">
+                    <a href="{% url 'page_news_detail' articles.1.id %}" class="more-btn">Подробнее</a>
+                    <p class="main-article-date">
+                        {{ articles.1.created_at }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="articles-list">
+        {% for i in articles|slice:"2:" %}
+        <div class="article-item">
+            <div class="article-image">
+                <img src="{{ i.image.url }}" alt="">
+            </div>
+            <div class="main-article-bottom">
+                <h3 class="main-article-title">{{ i.short_title }}</h3>
+                <div class="main-article-additional">
+                    <a href="{% url 'page_news_detail' i.id %}" class="more-btn">Подробнее</a>
+                    <p class="main-article-date">
+                        {{ i.created_at }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,220 @@
+.administrative-content {
+  display: flex;
+  gap: 45px;
+}
+
+.administrative-names {
+  background: #CFD1C4;
+  padding: 42px 26px;
+  border-radius: 8px;
+  width: 440px;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+}
+
+.administrative-name {
+  color: #020F0199;
+  width: 100%;
+  font-size: 24px;
+  font-weight: 500;
+  font-family: 'Literata', sans-serif;
+  display: flex;
+  justify-content: space-between;
+}
+
+.administrative-name:hover > span:nth-child(2) {
+  text-decoration: underline;
+}
+
+.administrative-list {
+  width: 715px;
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.administrative-item-title {
+  color: #913232;
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.administrative-item-description {
+  font-family: 'Literata', sans-serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 120%;
+  margin-bottom: 24px;
+  color: #020F01;
+}
+
+.administrative-link {
+  width: 81px;
+}
+
+.administrative-link > img {
+  transition: all .2s;
+  transform: translateY(0);
+}
+
+.administrative-link:hover > img {
+  transform: translateY(-10%);
+}
+
+.administrative-detail {
+  margin-top: 56px; 
+}
+
+.administrative-detail-links {
+  margin-top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.administrative-detail-link {
+  display: flex;
+  align-items: center;
+  gap: 48px; 
+}
+
+.administrative-detail-link-arrow {
+  width: 57px;
+  height: 26.74px;
+}
+
+.administrative-detail-link-arrow > img {
+  width: 100%;
+}
+
+.administrative-detail-link-text {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  text-decoration: underline;
+  text-decoration-thickness: 0%;
+  color: #4F5F4D;
+}
+
+.administrative-detail-link > .administrative-detail-link-arrow > img {
+  transition: all .2s;
+  transform: translateY(0);
+}
+
+.administrative-detail-link:hover > .administrative-detail-link-arrow > img {
+  transform: translateY(-10%);
+}
+
+.administrative-detail, .administrative-content {
+  min-height: 60vh;
+}
+
+.educational-organization-list {
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+}
+
+.educational-organization-item-title {
+  font-size: 40px;
+  font-weight: 500;
+  margin-bottom: 32px;
+  letter-spacing: 0%;
+}
+
+.educational-organization-item-description, .about-school-page-content > b {
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 120%;
+  font-family: 'Literata', sans-serif;
+}
+
+.about-school-page-content > b, .educational-organization-item-description > b {
+  font-weight: 600;
+}
+
+.administrative > .container > .map-block {
+  width: 1239.99951171875px;
+}
+
+.administrative > .container > .map-block > .map-box > .MapMaker {
+  width: 50%;
+}
+
+.administrative > .container > .map-block > .map-box > .el-map-img {
+  top: 154px;
+  left: 307px;
+}
+
+.administrative > .container > .map-block > .map-box > .map-content {
+  width: 50%;
+  height: auto;
+}
+
+.administrative > .container > .map-block > .map-box > .map-content > .polygon-2 {
+  top: 59px;
+  left: 553px;
+}
+
+.about-school-page-content > a, .about-school-page-content > ul > li > a {
+  color: #020F01;
+  font-weight: 400;
+  line-height: 120%;
+  text-decoration: underline;
+  text-decoration-thickness: 0%;
+  font-size: 24px;
+  transition: all .2s;
+}
+
+.about-school-page-content > a, .about-school-page-content > ul > li:hover > a {
+  opacity: 0.7;
+}
+
+.about-school-page-content > ul > li {
+  list-style: initial;
+}
+
+.about-school-page-content > ul {
+  padding-left: 40px;
+}
+
+.about-school-page-content > ul > br {
+  display: none;
+}
+
+/* === */
+
+.about-school-page-content > a, .about-school-page-content > ul > li > a {
+  color: #020F01;
+  font-weight: 400;
+  line-height: 120%;
+  text-decoration: underline;
+  text-decoration-thickness: 0%;
+  font-size: 24px;
+  transition: all .2s;
+}
+
+.about-school-page-content > a, .about-school-page-content > ul > li:hover > a {
+  opacity: 0.7;
+}
+
+.about-school-page-content > ul > li {
+  font-size: 24px;
+  list-style: initial;
+}
+
+.about-school-page-content > ul {
+  padding-left: 40px;
+}
+
+.about-school-page-content > ul > br {
+  display: none;
+}
+
+.about-school-page-content.all-links-black > a {
+  opacity: 1;
+}

@@ -1,0 +1,40 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Органы управления{% endblock %}
+
+{% block content %}
+<div class="administrative">
+  <div class="container">
+    <h2 class="generic-subtitle">
+      О нас |  Сведения об образовательной организации
+    </h2>
+    <h1 class="generic-title">
+      Сведения об образовательной организации 
+    </h1>
+
+    <div class="administrative-content" style="margin-bottom: 32px;">
+      <div class="administrative-names">
+        {% for control in paragraphs %}
+        <div class="administrative-name">
+          <span>{{ control.get_roman_id }}.</span>
+
+          <span>{{ control.title }}</span>
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="educational-organization-list">
+        {% for control in paragraphs %}
+        <div class="educational-organization-item">
+          <h4 class="educational-organization-item-title">{{ control.title }}</h4>
+          <p class="educational-organization-item-description">{{ control.description|safe|linebreaksbr }}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% include './partials/_contacts.html' with with_sidebar=False %}
+  </div>
+</div>
+{% endblock %}

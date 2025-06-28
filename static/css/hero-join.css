@@ -1,0 +1,263 @@
+.hero-join{
+    padding: 48px;
+}
+.hero-join-block{
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    gap: 15px;
+}
+.hero-join-box{
+    height: 397px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    /* light green */
+    background: rgb(207, 209, 196);
+    position: relative;
+    width: 68%;
+}
+
+.hero-join-box > .tbt {
+    width: 339px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tbt > img {
+    height: 100%;
+}
+
+.hero-join-content{
+    width: 60%;
+    padding-left: 20px;
+}
+
+.heroJoin-box-title{
+    /* Заголовки 2 */
+    color: rgb(2, 15, 1);
+    font-family: Playfair Display;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 53px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+.heroJoin-box-h4{
+    padding-top: 10px;
+    /* small text */
+    color: rgb(2, 15, 1);
+    font-family: Literata;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.heroJoin-box-text{
+    /* small text */
+    padding-top: 20px;
+    color: rgba(2, 15, 1, 0.8);
+    font-family: Literata;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.join-black-text-underline{
+    /* links */
+    padding-top: 40px;
+    color: rgb(2, 15, 1);
+    font-family: Literata;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0%;
+    text-align: left;
+    text-decoration-line: underline;
+}
+
+.hero-join-h3{
+    /* Base */
+    color: rgb(2, 15, 1);
+    font-family: Literata;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+.green{
+    /* Заголовки */
+    font-family: Playfair Display;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: left;
+    color: darkolivegreen;
+}
+
+.red{
+    /* Заголовки */
+    font-family: Playfair Display;
+    font-weight: 500;
+    line-height: 120%;
+    letter-spacing: 0%;
+    text-align: left;
+    color: brown;
+}
+
+.hero-join-h4{
+    /* подзаголовки 2 */
+    color: rgb(2, 15, 1);
+    font-family: Literata;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.heroJoin-box{
+    background-image: url("../assets/boy47.png");
+    width: 381.84px;
+    height: 397px;
+}
+
+.heroJoin-box-h2{
+    /* Заголовки 2 */
+    padding-left: 20px;
+    padding-top: 30px;
+    color: rgb(252, 248, 238);
+    font-family: Playfair Display;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 53px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.heroJoin-text{
+    padding-left: 25px;
+    /* small text */
+    color: rgb(252, 248, 238);
+    font-family: Literata;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.polygon {
+    position: absolute;
+    top: 42px;
+    left: 276px;
+}
+
+
+
+
+
+
+.join-one-box{
+    background-image: url("../assets/image 26.png");
+    width: 446px;
+    height: 397px;
+}
+
+.heroJoin-box-texting{
+    /* Заголовки 2 */
+    padding-left: 25px;
+    padding-top: 45px;
+    color: rgb(252, 248, 238);
+    font-family: Playfair Display;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 53px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.join-one-text-underline{
+    padding-top: 55px;
+    padding-left:20px;
+    /* links */
+    color: rgb(252, 248, 238);
+    font-family: Literata;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0%;
+    text-align: left;
+    text-decoration-line: underline;
+
+}
+
+.join-us{
+    display: flex;
+    padding-top: 20px;
+    align-items: center;
+    gap: 15px;
+
+}
+
+.join-thy-bo1{
+    width: 823px;
+    padding-top: 20px;
+    border-radius: 8px;
+    /* light green */
+    background: rgb(207, 209, 196);
+    display: flex;
+    gap: 10px;
+    height: 397px;
+}
+.join-img {
+    width: 456.45px;
+    height: 375.74px;
+}
+
+.join-fre-box{
+    padding: 28px;
+}
+
+.heroJoin-boxing{
+    width: 382px;
+    height: 397px;
+   background-image: url("../assets/image 27.png");
+}
+
+.heroJoin-boxing-h2{
+    /* Заголовки 2 */
+    padding-top: 213px;
+    padding-left: 20px;
+    color: rgb(252, 248, 238);
+    font-family: Playfair Display;
+    font-size: 40px;
+    font-weight: 500;
+    line-height: 53px;
+    letter-spacing: 0%;
+    text-align: left;
+}
+
+.join-free-text-underline{
+    padding-top: 15px;
+    padding-left: 20px;
+    /* links */
+    color: rgb(252, 248, 238);
+    font-family: Literata;
+    font-size: 32px;
+    font-weight: 400;
+    line-height: 48px;
+    letter-spacing: 0%;
+    text-align: left;
+    text-decoration-line: underline;
+}
+

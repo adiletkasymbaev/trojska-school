@@ -1,0 +1,64 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Алгоритм поступления{% endblock %}
+
+{% block content %}
+
+<div class="administrative">
+  <div class="container">
+    <h2 class="generic-subtitle">
+      О нас | Алгоритм поступления
+    </h2>
+
+    <div class="administrative-content">
+      <div class="administrative-names">
+        <a href="{% url 'page_school_information_main' %}" class="administrative-name">
+          <span>I.</span>
+
+          <span>Информация о школе</span>
+        </a>
+        <a href="{% url 'page_school_information_detail' 4 %}" class="administrative-name">
+          <span>II.</span>
+
+          <span>Поступление в 1 класс</span>
+        </a>
+        <a href="{% url 'page_school_information_detail' 5 %}" class="administrative-name">
+          <span>III.</span>
+
+          <span>Поступление в 2-4 класс</span>
+        </a>
+        <a href="{% url 'page_school_information_detail' 6 %}" class="administrative-name">
+          <span>IV.</span>
+
+          <span>Поступление в 5-9 класс</span>
+        </a>
+        <a href="{% url 'page_school_information_detail' 7 %}" class="administrative-name">
+          <span>V.</span>
+
+          <span>Поступление в 10 класс</span>
+        </a>
+      </div>
+
+      <div class="administrative-list">
+        <p class="about-school-page-content">
+          {{ current_page_info.title }}
+        </p>
+        <div class="append-image">
+          <img src="{{ current_page_info.image.url }}" alt="">
+        </div>
+        <div class="append-steps">
+          {% for step in steps %}
+          <div class="append-step {% if not step.text %}centered{% endif %}">
+            <p class="append-step-title">{{ step.title }}</p>
+            {% if step.text %}
+            <p class="append-step-text">{{ step.text }}</p>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

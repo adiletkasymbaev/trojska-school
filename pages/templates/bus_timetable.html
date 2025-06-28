@@ -1,0 +1,39 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Расписание автобусов{% endblock %}
+
+{% block content %}
+<div class="container">
+    <h3 class="available_spots-title-h3">Педагогам | Расписание автобусов</h3>
+        <div class="bus_timetable">
+            <h2 class="bell-schedule-h2">Расписание автобусов</h2>
+            <div class="bus-schedule-block">
+                <div class="bus-schedule-buttons" style="display: grid; grid-template-columns: 1fr 1fr;">
+                    {% for sc in schedules %}
+                    <a href="#{{ sc.title }}" class="generic-category-item" style="width: auto; padding: 8px 20px;">{{ sc.title }}</a>
+                    {% endfor %}
+                </div>
+
+                {% for sc in schedules %}
+                <h2 class="bus-schedule-title" id="{{ sc.title }}">{{ sc.title }}</h2>
+
+                <div class="bus-schedule-content">
+                    <div class="bus-map">
+                        <img src="{{ sc.image.url }}" alt="Карта маршрута автобуса">
+                    </div>
+
+                    <ol class="bus-stops-list" type="1">
+                        {% for tm in sc.times.all %}
+                        <li>
+                            {% if tm.time %}<span class="time">{{ tm.time }}</span>{% endif %}
+                            <span class="stop-name">{{ tm.text }}</span>
+                        </li>
+                        {% endfor %}
+                    </ol>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+</div>
+{% endblock %}

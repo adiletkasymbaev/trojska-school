@@ -1,0 +1,148 @@
+{% load static %}
+<header class="header">
+    <div class="container">
+        <div class="header-block">
+            <a href="{% url 'page_main' %}" class="header-box">
+                <img src="{% static 'assets/Layer_Logo.png' %}" alt="">
+                <h1 class="header-title">ННОУ «Троицкая Православная школа»</h1>
+            </a>
+
+            <div class="header-nav">
+                <ul class="nav-list">
+                    <li><a href="mailto:{{ contacts.email }}" class="nav-link">{{ contacts.email }}</a></li>
+                    <li><a href="tel:{{ contacts.phone }}" class="nav-link">{{ contacts.phone }}</a></li>
+                    <li><a href="#" class="nav-link">
+                        <svg width="20.003906" height="20.003906" viewBox="0 0 20.0039 20.0039" fill="none"
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs/>
+                            <path id="Icon"
+                                  d="M9 17C4.58 17 1 13.41 1 9C1 4.58 4.58 1 9 1C13.41 1 17 4.58 17 9C17 13.41 13.41 17 9 17ZM19 19L14.64 14.65"
+                                  stroke="#101828" stroke-opacity="1.000000" stroke-width="2.000000"
+                                  stroke-linejoin="round" stroke-linecap="round"/>
+                        </svg>
+                    </a></li>
+                    <li><a href="{{ contacts.vk_link }}" class="nav-link">
+                        <svg width="28.000000" height="27.722656" viewBox="0 0 28 27.7227" fill="none"
+                             xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <desc>
+                                Created with Pixso.
+                            </desc>
+                            <defs>
+                                <clipPath id="clip2_4742">
+                                    <rect id="basil:vk-solid" rx="12.861290" width="26.000000" height="25.722580"
+                                          transform="translate(1.000000 1.000000)" fill="white" fill-opacity="0"/>
+                                </clipPath>
+                            </defs>
+                            <rect id="basil:vk-solid" rx="12.861290" width="26.000000" height="25.722580"
+                                  transform="translate(1.000000 1.000000)" fill="#FCF8EE" fill-opacity="1.000000"/>
+                            <g clip-path="url(#clip2_4742)">
+                                <path id="Vector"
+                                      d="M21.24 18.54L19.52 18.54C18.87 18.54 18.67 18.01 17.5 16.84C16.48 15.85 16.05 15.73 15.78 15.73C15.43 15.73 15.33 15.83 15.33 16.32L15.33 17.87C15.33 18.29 15.19 18.54 14.1 18.54C13.03 18.47 12 18.14 11.09 17.59C10.17 17.05 9.4 16.29 8.84 15.38C7.5 13.72 6.57 11.76 6.12 9.67C6.12 9.41 6.21 9.18 6.71 9.18L8.43 9.18C8.87 9.18 9.03 9.37 9.21 9.83C10.05 12.29 11.48 14.44 12.05 14.44C12.28 14.44 12.37 14.34 12.37 13.78L12.37 11.25C12.3 10.09 11.69 9.99 11.69 9.57C11.69 9.46 11.74 9.36 11.83 9.28C11.91 9.21 12.01 9.17 12.13 9.18L14.84 9.18C15.21 9.18 15.33 9.36 15.33 9.8L15.33 13.23C15.33 13.6 15.49 13.72 15.6 13.72C15.82 13.72 16 13.6 16.4 13.19C17.28 12.13 17.99 10.94 18.52 9.67C18.57 9.51 18.68 9.39 18.81 9.3C18.95 9.21 19.11 9.16 19.27 9.18L21 9.18C21.51 9.18 21.62 9.43 21.51 9.8C20.89 11.21 20.11 12.54 19.2 13.78C19.01 14.07 18.94 14.21 19.2 14.55C19.37 14.81 19.98 15.31 20.38 15.79C20.97 16.38 21.46 17.06 21.83 17.81C21.98 18.29 21.73 18.54 21.24 18.54Z"
+                                      fill="#4F5F4D" fill-opacity="1.000000" fill-rule="nonzero"/>
+                            </g>
+                            <rect id="basil:vk-solid" rx="12.861290" width="26.000000" height="25.722580"
+                                  transform="translate(1.000000 1.000000)" stroke="#4F5F4D" stroke-opacity="1.000000"
+                                  stroke-width="2.000000"/>
+                        </svg>
+                    </a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>
+<nav class="navbar">
+    <ul class="container menu">
+        <li class="menu-item has-submenu">
+            <a href="#">О нас</a>
+            <ul class="submenu">
+                <li class="has-submenu">
+                <a href="{% url 'page_school_information_main' %}" style="width: 100%; display: flex; justify-content: space-between;">
+                    <span>Информация о школе</span>
+                    <span>▸</span>
+                </a>
+                <ul class="submenu submenu-right">
+                    <li><a href="{% url 'page_school_information_detail' 1 %}">Общая информация</a></li>
+                    <li><a href="{% url 'page_school_information_history' %}">История Казанской церкви</a></li>
+                    <li><a href="{% url 'page_school_information_detail' 2 %}">История школьного храма</a></li>
+                    <li><a href="{% url 'page_school_information_detail' 3 %}">Помощь школе</a></li>
+                </ul>
+                </li>
+                <li><a href="{% url 'page_append' %}">Алгоритм поступления</a></li>
+                <li><a href="{% url 'page_teachers' %}">Педагогический состав</a></li>
+                <li><a href="{% url 'page_achievments' %}">Наши достижения</a></li>
+                <li><a href="{% url 'page_news' %}">Новости</a></li>
+                <li><a href="{% url 'page_social_psychology' %}">Социально-психологическая служба</a></li>
+                <li><a href="{% url 'page_additional_organization' %}">Сведения об образовательной организации</a></li>
+                <li><a href="{% url 'page_administrative_control' %}">Органы управления</a></li>
+                <li><a href="{% url 'page_gallery' %}">Галерея</a></li>
+                {% for page in page_for_nav_a %}
+                <li><a href="{% url 'page_type_a' page.id %}">{{ page.page_title }}</a></li>
+                {% endfor %}
+                {% for page in page_for_nav_b %}
+                <li><a href="{% url 'page_type_b' page.id %}">{{ page.page_title }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li class="menu-item has-submenu">
+            <a href="#">Родителям</a>
+            <ul class="submenu">
+                <li><a href="{% url 'page_append' %}">Алгоритм поступления</a></li>
+                <li><a href="{% url 'page_available_spots' %}">Свободные места в классах</a></li>
+                <li><a href="{% url 'page_schedule' %}">Расписание звонков</a></li>
+                <li><a href="{% url 'page_schedule_bus' %}">Расписание автобусов</a></li>
+                <li><a href="{% url 'page_news' %}">Новости школы</a></li>
+                <li><a href="{% url 'page_type_b' 6 %}">Правила доступа и нахождения в школе</a></li>
+                <li><a href="{% url 'page_administrative_control_detail' 3 %}">Родительский совет</a></li>
+                <li><a href="{% url 'page_cuisine' %}">Питание</a></li>
+                <li><a href="{% url 'page_documents' %}">Документы</a></li>
+                {% for page in page_for_nav_a %}
+                <li><a href="{% url 'page_type_a' page.id %}">{{ page.page_title }}</a></li>
+                {% endfor %}
+                {% for page in page_for_nav_b %}
+                <li><a href="{% url 'page_type_b' page.id %}">{{ page.page_title }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li class="menu-item has-submenu">
+            <a href="#">Учащимся</a>
+            <ul class="submenu">
+                <li><a href="{% url 'page_schedule' %}">Расписание звонков</a></li>
+                <li><a href="{% url 'page_schedule_bus' %}">Расписание автобусов</a></li>
+                <li><a href="{% url 'page_news' %}">Новости школы</a></li>
+                <li><a href="{% url 'page_type_b' 3 %}">Правила доступа и нахождения в школе</a></li>
+                <li><a href="{% url 'page_subjects' %}">Предметные недели</a></li>
+                <li><a href="{% url 'page_attestation' %}">Государственная итоговая аттестация</a></li>
+                <li><a href="{% url 'page_type_b' 1 %}">Олимпиады и конкурсы</a></li>
+                <li><a href="{% url 'page_type_b' 2 %}">Полезные ссылки</a></li>
+                {% for page in page_for_nav_a %}
+                <li><a href="{% url 'page_type_a' page.id %}">{{ page.page_title }}</a></li>
+                {% endfor %}
+                {% for page in page_for_nav_b %}
+                <li><a href="{% url 'page_type_b' page.id %}">{{ page.page_title }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li class="menu-item has-submenu">
+            <a href="#">Педагогам</a>
+            <ul class="submenu">
+                <li><a href="{% url 'page_schedule' %}">Расписание звонков</a></li>
+                <li><a href="{% url 'page_schedule_bus' %}">Расписание автобусов</a></li>
+                <li><a href="{% url 'page_subjects' %}">Предметные недели</a></li>
+                <li><a href="{% url 'page_vacancy' %}">Вакансии</a></li>
+                <li><a href="{% url 'page_type_b' 4 %}">Олимпиады и конкурсы</a></li>
+                <li><a href="{% url 'page_type_b' 5 %}">Полезные ссылки</a></li>
+                {% for page in page_for_nav_a %}
+                <li><a href="{% url 'page_type_a' page.id %}">{{ page.page_title }}</a></li>
+                {% endfor %}
+                {% for page in page_for_nav_b %}
+                <li><a href="{% url 'page_type_b' page.id %}">{{ page.page_title }}</a></li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li class="menu-item"><a href="{% url 'page_additional_education' %}">Дополнительное образование</a></li>
+        <li class="menu-item"><a href="{% url 'page_contacts' %}">Контакты</a></li>
+    </ul>
+    </nav>

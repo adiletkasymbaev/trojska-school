@@ -1,0 +1,78 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %}Достижения{% endblock %}
+
+{% block content %}
+<div class="news">
+  <div class="container">
+    <h2 class="generic-subtitle">
+        О нас |  Наши достижения
+    </h2>
+    <h1 class="generic-title">
+        Наши достижения
+    </h1>
+    <div class="generic-category-list">
+        <a href="?category=" class="generic-category-item">
+          Наши достижения
+        </a>
+        {% for i in category %}
+        <a href="?category={{ i.id }}" class="generic-category-item">
+        {{ i.name }}
+        </a>
+        {% endfor %}
+    </div>
+
+    <div class="main-articles-list">
+        {% if achievments.0 %}
+        <div class="main-article" style="background: url('{{ achievments.0.image.url }}');">
+            <div class="main-article-bottom">
+                {% if achievments.1 %}
+                <div class="main-article-bottom--bump"></div>
+                {% endif %}
+                <h3 class="main-article-title">{{ achievments.0.title }}</h3>
+                <div class="main-article-additional">
+                    <a href="#" class="more-btn">Подробнее</a>
+                    <p class="main-article-date">
+                        {{ achievments.0.created_at }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% if achievments.1 %}
+        <div class="main-article" style="background: url('{{ achievments.1.image.url }}');">
+            <div class="main-article-bottom">
+                <h3 class="main-article-title">{{ achievments.1.title }}</h3>
+                <div class="main-article-additional">
+                    <a href="#" class="more-btn">Подробнее</a>
+                    <p class="main-article-date">
+                        {{ achievments.1.created_at }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+
+    <div class="articles-list">
+        {% for i in achievments|slice:"2:" %}
+        <div class="article-item">
+            <div class="article-image">
+                <img src="{{ i.image.url }}" alt="">
+            </div>
+            <div class="main-article-bottom">
+                <h3 class="main-article-title">{{ i.short_title }}</h3>
+                <div class="main-article-additional">
+                    <a href="#" class="more-btn">Подробнее</a>
+                    <p class="main-article-date">
+                        {{ i.created_at }}
+                    </p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}

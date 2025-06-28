@@ -1,0 +1,19 @@
+{% extends 'generics/base.html' %}
+{% load static %}
+
+{% block title %} {{ subject.name }} {% endblock %}
+
+{% block content %}
+<div class="container" style="margin-bottom: 120px;">
+  <h2 class="generic-subtitle">
+    <a class="generic-breadcrumb generic-subtitle" href="{% url 'page_subjects' %}">Предметные недели</a> | {{ subject.name }}
+  </h2>
+  <h1 class="generic-title">
+    {{ subject.name }} 
+  </h1>
+
+  <div class="about-school-page-content">
+    {{ subject.description|safe|linebreaksbr }}
+  </div>
+</div>
+{% endblock %}

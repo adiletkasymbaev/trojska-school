@@ -1,0 +1,181 @@
+@import url('header.css');
+@import url('header-site.css');
+@import url('history-invite.css');
+@import url('hero-join.css');
+@import url('become-family.css');
+@import url('map.css');
+@import url('generic.css');
+@import url('footer.css');
+@import url('news.css');
+@import url('gallery.css');
+@import url('administrative-control.css');
+@import url('about-school-main.css');
+@import url('append.css');
+@import url('cuisine.css');
+@import url('vacancy.css');
+@import url('test.css');
+@import url('available_spots.css');
+@import url('bell_schedule.css');
+@import url('bus-timetable.css');
+@import url('thematic.css');
+@import url('faculty.css');
+@import url('teaching_staff.css');
+@import url('attestation.css');
+@import url('subjects.css');
+@import url('type_a_page.css');
+
+@font-face {
+  font-family: 'TriodPostnaja';
+  src: url('../fonts/triod-postnaja.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  list-style: none;
+  text-decoration: none;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: #FCF8EE;
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 1330px) {
+  body {
+    overflow-x: hidden;
+  }
+
+  #app {
+    width: 1340px; /* фиксированная ширина сайта */
+    transform-origin: top left;
+  }
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+p, span, a, h1, h2, h3, h4, h5, h6, b {
+  font-family: 'Playfair Display', sans-serif;
+}
+
+.image-block {
+  margin: 10px;
+}
+
+.image-block img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.image-block p {
+  font-size: 14px;
+  margin: 5px 0 0;
+}
+
+.image-block-left {
+  float: left;
+  margin-right: 15px;
+}
+
+.image-block-right {
+  float: right;
+  margin-left: 15px;
+}
+
+.image-block-center {
+  width: auto;
+  float: none;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.image-block-center > img {
+display: block;
+  max-width: 100%;
+  height: auto;
+  object-fit: contain; /* если хочешь, чтобы картинка сохраняла пропорции */
+  flex-shrink: 0;
+}
+
+.generic-content-title {
+  letter-spacing: 0%;
+  line-height: 120%;
+  font-size: 48px;
+  font-weight: 500;
+  color: #4F5F4D;
+}
+
+.generic-inner-title {
+  padding: 56px 0;
+  font-size: 40px;
+  font-weight: 500;
+  color: #020F01;
+}
+
+.type-a-paragraphs {
+  margin-bottom: 71px;
+}
+
+.double-span-block {
+  display: flex;
+  justify-content: space-between;
+  font-size: 24px;
+  font-family: 'Literata', sans-serif;
+}
+
+.become-family-box {
+  overflow: hidden;
+}
+
+.become-position {
+  transition: all .2s;
+}
+
+.become-family-box:hover > .become-position {
+  top: -10px;
+}
+
+.about-school-page > .about-school-page-left > img {
+  padding: 0!important;
+  transition: all .2s;
+}
+
+.about-school-page:hover > .about-school-page-left > img {
+  transform: scale(1.03);
+}
+
+.about-school-page > .about-school-page-right {
+  color: #020F01;
+}
+
+.news-image-wrap {
+  margin-bottom: 20px;
+}
+
+.news-date ~ .administrative-detail {
+  margin-top: 20px;
+}
+
+.heroJoin-box:hover {
+
+}
+
+.hero-join-box {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.heroJoin-box {
+  border-radius: 8px;
+}
