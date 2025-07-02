@@ -224,7 +224,6 @@ class Contact(SingletonModel):
 
 class MainPage(SingletonModel):
   hero_title = models.CharField("Заголовок на баннере", max_length=100)
-  hero_link = models.CharField("Ссылка с баннера", max_length=100)
 
   joining_step_1_title = models.CharField("Шаг 1 — заголовок", max_length=100)
   joining_step_1_description = models.CharField("Шаг 1 — описание", max_length=100)
@@ -375,8 +374,8 @@ class AppendAlgoritm(SingletonModel):
   title = models.CharField("Заголовок", max_length=1000)
 
   class Meta:
-    verbose_name = "Информация о школе: Алгоритм поступления"
-    verbose_name_plural = "Информация о школе: Алгоритм поступления"
+    verbose_name = "Алгоритм поступления"
+    verbose_name_plural = "Алгоритм поступления"
 
   def __str__(self):
     return self.title
@@ -546,7 +545,7 @@ class Attestation(SingletonModel):
 class AttestationItem(models.Model):
   attestation = models.ForeignKey(Attestation, on_delete=models.CASCADE, related_name="links")
   name = models.TextField("Название", max_length=2000)
-  url = models.URLField("URL ссылки", null=True, blank=True)
+  url = models.CharField("Ссылка", null=True, blank=True)
 
   class Meta: 
     verbose_name = "Ссылка на странице"
@@ -557,6 +556,7 @@ class AttestationItem(models.Model):
 
 class GenericPageCategory(models.Model):
   name = models.CharField("Название", max_length=1000)
+  link = models.CharField("Ссылка на страницу", max_length=1000, null=True, blank=True)
 
   class Meta: 
     verbose_name = "Категория в навигации"
@@ -567,7 +567,7 @@ class GenericPageCategory(models.Model):
 
 class GenericPageA(models.Model):
   show_in_nav = models.BooleanField("Показать страницу в навигации?", default=False)
-  category = models.ForeignKey(GenericPageCategory, verbose_name="Категория", on_delete=models.CASCADE, related_name="pages_a")
+  category = models.ForeignKey(GenericPageCategory, verbose_name="Категория", on_delete=models.CASCADE, related_name="pages_a", null=True, blank=True)
   path = models.CharField("Путь к странице", max_length=800, null=True, blank=True)
   page_title = models.CharField("Название страницы", max_length=2000)
   
@@ -579,7 +579,7 @@ class GenericPageA(models.Model):
     verbose_name_plural = "Страницы типа 'А'"
 
   def __str__(self):
-    return f"{self.category} | {self.page_title}"
+    return f"{self.category if self.category else "-"} | {self.page_title}"
 
 class GenericPageA_Paragraph(models.Model):
   page = models.ForeignKey(GenericPageA, on_delete=models.CASCADE, related_name="paragraphs")
@@ -604,7 +604,7 @@ class GenericPageB(models.Model):
   ]
 
   show_in_nav = models.BooleanField("Показать страницу в навигации?", default=False)
-  category = models.ForeignKey(GenericPageCategory, verbose_name="Категория", on_delete=models.CASCADE, related_name="pages_b")
+  category = models.ForeignKey(GenericPageCategory, verbose_name="Категория", on_delete=models.CASCADE, related_name="pages_b", null=True, blank=True)
   path = models.CharField("Путь к странице", max_length=800, null=True, blank=True)
   page_title = models.CharField("Название страницы", max_length=2000)
   description = models.TextField("Описание", max_length=20000)
@@ -622,7 +622,7 @@ class GenericPageB(models.Model):
     verbose_name_plural = "Страницы типа 'Б'"
 
   def __str__(self):
-    return f"{self.category} | {self.page_title}"
+    return f"{self.category if self.category else "-"} | {self.page_title}"
 
 class SubjectWeek(models.Model):
   name = models.CharField("Название", max_length=2000)

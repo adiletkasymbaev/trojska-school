@@ -7,9 +7,9 @@
 <div class="container">
   <h2 class="generic-subtitle">
     {% if current_page_info.path %}
-      {{ current_page_info.category }} | {{ current_page_info.path }}
+      {% if current_page_info.category %}{% if current_page_info.category.link %}<a class="generic-breadcrumb generic-subtitle" href="{{ current_page_info.category.link }}">{{ current_page_info.category }}</a>{% else %}{{ current_page_info.category }}{% endif %} |{% endif %} {{ current_page_info.path }}
     {% else %}
-      {{ current_page_info.category }} | {{ current_page_info.page_title }}
+      {% if current_page_info.category %}{% if current_page_info.category.link %}<a class="generic-breadcrumb generic-subtitle" href="{{ current_page_info.category.link }}">{{ current_page_info.category }}</a>{% else %}{{ current_page_info.category }}{% endif %} |{% endif %} {{ current_page_info.page_title }}
     {% endif %}
   </h2>
 
@@ -23,7 +23,7 @@
 
   <div class="type-a-paragraphs">
     {% for par in current_page_info.paragraphs.all %}
-    <div class="type-a-paragraph">
+    <div class="type-a-paragraph" style="margin-top: 30px;">
       <h2 class="bus-schedule-title type-a-paragraph-title" style="color: #4F5F4D; margin-bottom: 31px;" id="{{ par.title }}">{{ par.title }}</h2>
       <div class="type-a-paragraph-content about-school-page-content" style="font-weight: 400;">
         {{ par.description|safe|linebreaksbr }}

@@ -4,7 +4,7 @@
   <div class="container">
     <div class="footer-colums">
       <div class="footer__columns">
-        <p><a style="font-weight: 500;" href="#">О нас</a></p>
+        <p><a style="font-weight: 500;" href="{% url 'page_type_b' 9 %}">О нас</a></p>
         <p><a class="footer__text" href="{% url 'page_school_information_main' %}">Информация о школе</a></p>
         <p><a class="footer__text" href="{% url 'page_append' %}">Алгоритм поступления</a></p>
         <p><a class="footer__text" href="{% url 'page_teachers' %}">Педагогический состав</a></p>
@@ -22,7 +22,7 @@
         {% endfor %}
       </div>
       <div class="footer__columns">
-        <p><a style="font-weight: 500;" href="#">Родителям</a></p>
+        <p><a style="font-weight: 500;" href="{% url 'page_type_b' 10 %}">Родителям</a></p>
         <p><a class="footer__text" href="{% url 'page_append' %}">Алгоритм поступления</a></p>
         <p><a class="footer__text" href="{% url 'page_schedule' %}">Расписание звонков</a></p>
         <p><a class="footer__text" href="{% url 'page_schedule_bus' %}">Расписание автобусов</a></p>
@@ -41,7 +41,7 @@
         {% endfor %}
       </div>
       <div class="footer__columns">
-        <p><a style="font-weight: 500;" href="#">Учащимся</a></p>
+        <p><a style="font-weight: 500;" href="{% url 'page_type_b' 11 %}">Учащимся</a></p>
         <p><a class="footer__text" href="{% url 'page_schedule_bus' %}">Расписание автобусов</a></p>
         <p><a class="footer__text" href="{% url 'page_schedule' %}">Расписание звонков</a></p>
         <p><a class="footer__text" href="{% url 'page_news' %}">Новости школы</a></p>
@@ -58,7 +58,7 @@
         {% endfor %}
       </div>
       <div class="footer__columns">
-        <p><a style="font-weight: 500;" href="#">Педагогам</a></p>
+        <p><a style="font-weight: 500;" href="{% url 'page_type_b' 12 %}">Педагогам</a></p>
         <p><a class="footer__text" href="{% url 'page_schedule_bus' %}">Расписание автобусов</a></p>
         <p><a class="footer__text" href="{% url 'page_schedule' %}">Расписание звонков</a></p>
         <p><a class="footer__text" href="{% url 'page_subjects' %}">Предметные недели</a></p>

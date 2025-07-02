@@ -30,11 +30,11 @@
     <div class="container">
       {% if current_page_info.custom_breadcrumbs %}
       <h2 class="generic-subtitle">
-        О нас | {{ current_page_info.custom_breadcrumbs }}
+        <a href="{% url 'page_type_b' 9 %}" class="generic-breadcrumb generic-subtitle">О нас</a> | {{ current_page_info.custom_breadcrumbs }}
       </h2>
       {% else %}
       <h2 class="generic-subtitle">
-        О нас | <a href="{% url 'page_school_information_main' %}" class="generic-breadcrumb generic-subtitle">Информация о школе</a> | {{ current_page_info.page_title }}
+        <a href="{% url 'page_type_b' 9 %}" class="generic-breadcrumb generic-subtitle">О нас</a> | <a href="{% url 'page_school_information_main' %}" class="generic-breadcrumb generic-subtitle">Информация о школе</a> | {{ current_page_info.page_title }}
       </h2>
       {% endif %}
     </div>

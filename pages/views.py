@@ -603,3 +603,20 @@ def news_detail_page(request, id):
   }
 
   return render(request, 'news_detail.html', context)
+
+def achievments_detail_page(request, id):
+  main_page_info = MainPage.objects.first()
+  contacts = Contact.objects.first()
+  current_page_info = Achievment.objects.get(id=id)
+  page_for_nav_a = GenericPageA.objects.all().filter(show_in_nav=True)
+  page_for_nav_b = GenericPageB.objects.all().filter(show_in_nav=True)
+
+  context = {
+      'main_page_info': main_page_info,
+      'contacts': contacts,
+      'current_page_info': current_page_info,
+      'page_for_nav_a': page_for_nav_a,
+      'page_for_nav_b': page_for_nav_b,
+  }
+
+  return render(request, 'news_detail.html', context)

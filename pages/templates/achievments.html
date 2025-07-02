@@ -7,7 +7,7 @@
 <div class="news">
   <div class="container">
     <h2 class="generic-subtitle">
-        О нас |  Наши достижения
+        <a href="{% url 'page_type_b' 9 %}" class="generic-breadcrumb generic-subtitle">О нас</a> |  Наши достижения
     </h2>
     <h1 class="generic-title">
         Наши достижения
@@ -32,7 +32,7 @@
                 {% endif %}
                 <h3 class="main-article-title">{{ achievments.0.title }}</h3>
                 <div class="main-article-additional">
-                    <a href="#" class="more-btn">Подробнее</a>
+                    <a href="{% url 'page_achievments_detail' achievments.0.id %}" class="more-btn">Подробнее</a>
                     <p class="main-article-date">
                         {{ achievments.0.created_at }}
                     </p>
@@ -45,7 +45,7 @@
             <div class="main-article-bottom">
                 <h3 class="main-article-title">{{ achievments.1.title }}</h3>
                 <div class="main-article-additional">
-                    <a href="#" class="more-btn">Подробнее</a>
+                    <a href="{% url 'page_achievments_detail' achievments.1.id %}" class="more-btn">Подробнее</a>
                     <p class="main-article-date">
                         {{ achievments.1.created_at }}
                     </p>
@@ -64,7 +64,7 @@
             <div class="main-article-bottom">
                 <h3 class="main-article-title">{{ i.short_title }}</h3>
                 <div class="main-article-additional">
-                    <a href="#" class="more-btn">Подробнее</a>
+                    <a href="{% url 'page_achievments_detail' i.id %}" class="more-btn">Подробнее</a>
                     <p class="main-article-date">
                         {{ i.created_at }}
                     </p>

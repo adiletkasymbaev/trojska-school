@@ -5,7 +5,7 @@
 
 {% block content %}
     <div class="container">
-        <h3 class="available_spots-title-h3">О нас | <a href="{% url 'page_teachers' %}" class="generic-breadcrumb generic-subtitle">Педагогический состав</a> | {{ teacher.full_name }}</h3>
+        <h3 class="available_spots-title-h3"><a href="{% url 'page_type_b' 9 %}" class="generic-breadcrumb generic-subtitle">О нас</a> | <a href="{% url 'page_teachers' %}" class="generic-breadcrumb generic-subtitle">Педагогический состав</a> | {{ teacher.full_name }}</h3>
 
             <div class="teaching_staff-block">
                 <div class="teaching_staff-right">

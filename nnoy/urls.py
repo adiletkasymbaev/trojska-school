@@ -15,6 +15,7 @@ urlpatterns = [
     path('teachers/', teachers_page, name="page_teachers"),
     path('teachers/<int:id>/', teachers_detail_page, name="page_teachers_detail"),
     path('achievments/', achievments_page, name="page_achievments"),
+    path('achievments/<int:id>/', achievments_detail_page, name="page_achievments_detail"),
     path('append/', append_page, name="page_append"),
     path('cuisine/', cuisine_page, name="page_cuisine"),
     path('help-school/', help_page, name="page_help_school"),

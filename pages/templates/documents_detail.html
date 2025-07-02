@@ -8,9 +8,9 @@
   <div class="container">
     <h2 class="generic-subtitle">
       {% if parent.is_parent %}
-      Родителям | {{ parent.title }}
+      <a href="{% url 'page_type_b' 10 %}" class="generic-breadcrumb generic-subtitle">Родителям</a> | {{ parent.title }}
       {% else %}
-      Родителям | <a href="{% url parent.link %}" class="generic-breadcrumb generic-subtitle">{{ parent.title }}</a> | {{ data.title }}
+      <a href="{% url 'page_type_b' 10 %}" class="generic-breadcrumb generic-subtitle">Родителям</a> | <a href="{% url parent.link %}" class="generic-breadcrumb generic-subtitle">{{ parent.title }}</a> | {{ data.title }}
       {% endif %}
     </h2>
     <h1 class="generic-title">
