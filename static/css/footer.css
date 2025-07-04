@@ -172,7 +172,7 @@
 
 .footer__adres{
     color: rgb(2, 15, 1);
-    font-family: 'Cambria', serif;
+    font-family: 'Literata', serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;
@@ -182,7 +182,7 @@
 
 .footer__number, .footer__emil{
     color: rgb(2, 15, 1);
-    font-family: 'Cambria', sans-serif;
+    font-family: 'Literata', sans-serif;
     font-size: 16px;
     font-weight: 400;
     line-height: 19px;

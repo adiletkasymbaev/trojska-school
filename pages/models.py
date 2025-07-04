@@ -504,8 +504,7 @@ class BellSchedule(models.Model):
 
 class BusSchedule(models.Model):
   title = models.CharField("Название маршрута", max_length=2000)
-  image = models.ImageField("Вариант 1: Изображение с картой", upload_to="maps/", null=True, blank=True)
-  iframe = models.TextField("Вариант 2: Ссылка на яндекс карту", max_length=10000, null=True, blank=True)
+  image = models.ImageField("Изображение с картой", upload_to="maps/", null=True, blank=True)
 
   class Meta: 
     verbose_name = "Расписание автобусов"

@@ -130,7 +130,7 @@
   font-size: 24px;
   font-weight: 500;
   line-height: 120%;
-  font-family: 'Cambria', sans-serif;
+  font-family: 'Literata', sans-serif;
 }
 
 .about-school-page-content b, .educational-organization-item-description b {
@@ -196,7 +196,7 @@
   text-decoration-thickness: 0%;
   font-size: 24px;
   transition: all .2s;
-  font-family: 'Cambria', sans-serif;
+  font-family: 'Literata', sans-serif;
 }
 
 .about-school-page-content ul > li:hover > a {
@@ -221,5 +221,5 @@
 }
 
 .about-school-page-content * {
-  font-family: 'Cambria', sans-serif;
+  font-family: 'Literata', sans-serif;
 }

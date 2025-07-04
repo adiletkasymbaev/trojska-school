@@ -15,10 +15,14 @@
         <p><a class="footer__text" href="{% url 'page_additional_organization' %}">Сведения об образовательной организации</a></p>
         <p><a class="footer__text" href="{% url 'page_contacts' %}">Контакты</a></p>
         {% for page in page_for_nav_a %}
+        {% if page.category.name == 'О нас' %}
         <p><a class="footer__text" href="{% url 'page_type_a' page.id %}">{{ page.page_title }}</a></p>
+        {% endif %}
         {% endfor %}
         {% for page in page_for_nav_b %}
+        {% if page.category.name == 'О нас' %}
         <p><a class="footer__text" href="{% url 'page_type_b' page.id %}">{{ page.page_title }}</a></p>
+        {% endif %}
         {% endfor %}
       </div>
       <div class="footer__columns">
@@ -34,10 +38,14 @@
         <p><a class="footer__text" href="#">Работа с детьми с особыми потребностями</a></p>
         <p><a class="footer__text" href="#">Документы</a></p>
         {% for page in page_for_nav_a %}
+        {% if page.category.name == 'Родителям' %}
         <p><a class="footer__text" href="{% url 'page_type_a' page.id %}">{{ page.page_title }}</a></p>
+        {% endif %}
         {% endfor %}
         {% for page in page_for_nav_b %}
+        {% if page.category.name == 'Родителям' %}
         <p><a class="footer__text" href="{% url 'page_type_b' page.id %}">{{ page.page_title }}</a></p>
+        {% endif %}
         {% endfor %}
       </div>
       <div class="footer__columns">
@@ -51,10 +59,14 @@
         <p><a class="footer__text" href="{% url 'page_type_b' 1 %}">Олимпиады и конкурсы</a></p>
         <p><a class="footer__text" href="{% url 'page_type_b' 2 %}">Ссылки на полезные ресурсы</a></p>
         {% for page in page_for_nav_a %}
+        {% if page.category.name == 'Учащимся' %}
         <p><a class="footer__text" href="{% url 'page_type_a' page.id %}">{{ page.page_title }}</a></p>
+        {% endif %}
         {% endfor %}
         {% for page in page_for_nav_b %}
+        {% if page.category.name == 'Учащимся' %}
         <p><a class="footer__text" href="{% url 'page_type_b' page.id %}">{{ page.page_title }}</a></p>
+        {% endif %}
         {% endfor %}
       </div>
       <div class="footer__columns">
@@ -65,10 +77,14 @@
         <p><a class="footer__text" href="{% url 'page_vacancy' %}">Вакансии</a></p>
         <p><a class="footer__text" href="{% url 'page_type_b' 5 %}">Ссылки на полезные ресурсы</a></p>
         {% for page in page_for_nav_a %}
+        {% if page.category.name == 'Педагогам' %}
         <p><a class="footer__text" href="{% url 'page_type_a' page.id %}">{{ page.page_title }}</a></p>
+        {% endif %}
         {% endfor %}
         {% for page in page_for_nav_b %}
+        {% if page.category.name == 'Педагогам' %}
         <p><a class="footer__text" href="{% url 'page_type_b' page.id %}">{{ page.page_title }}</a></p>
+        {% endif %}
         {% endfor %}
       </div>
     </div>
