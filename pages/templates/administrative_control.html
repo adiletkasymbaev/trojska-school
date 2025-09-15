@@ -3,6 +3,15 @@
 
 {% block title %}Органы управления{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Информация об органах управления Троицкой Православной школы. Узнайте о руководстве и структуре школы.">
+  <meta name="keywords" content="Троицкая Православная школа, органы управления, руководство, структура">
+  <meta property="og:title" content="Органы управления — Троицкая Православная школа">
+  <meta property="og:description" content="Информация об органах управления Троицкой Православной школы. Узнайте о руководстве и структуре школы.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="administrative">
   <div class="container">

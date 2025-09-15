@@ -3,6 +3,15 @@
 
 {% block title %}Вакансии{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Актуальные вакансии Троицкой Православной школы. Присоединяйтесь к коллективу педагогов и сотрудников нашей христианской школы.">
+  <meta name="keywords" content="вакансии школа, православная школа работа, педагог вакансии, христианская школа преподаватель">
+  <meta property="og:title" content="Вакансии — Троицкая Православная школа">
+  <meta property="og:description" content="Свободные вакансии для педагогов и сотрудников Троицкой Православной школы. Узнайте подробнее и присоединяйтесь к нашей команде.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="container">
   <h2 class="generic-subtitle">

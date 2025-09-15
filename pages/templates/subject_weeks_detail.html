@@ -3,6 +3,15 @@
 
 {% block title %} {{ subject.name }} {% endblock %}
 
+{% block meta %}
+  <meta name="description" content="{{ subject.description|striptags|truncatechars:160 }}">
+  <meta name="keywords" content="{{ subject.name }}, предметные недели, школьные мероприятия, православная школа">
+  <meta property="og:title" content="{{ subject.name }} — Троицкая Православная школа">
+  <meta property="og:description" content="{{ subject.description|striptags|truncatechars:200 }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="container" style="margin-bottom: 120px;">
   <h2 class="generic-subtitle">

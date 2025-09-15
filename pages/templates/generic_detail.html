@@ -3,6 +3,15 @@
 
 {% block title %} {{ data.title }} {% endblock %}
 
+{% block meta %}
+  <meta name="description" content="{{ data.description|striptags|truncatechars:160 }}">
+  <meta name="keywords" content="{{ data.title }}, административная информация, Троицкая Православная школа, документы, ссылки">
+  <meta property="og:title" content="{{ data.title }} — Троицкая Православная школа">
+  <meta property="og:description" content="{{ data.description|striptags|truncatechars:200 }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="administrative">
   <div class="container">

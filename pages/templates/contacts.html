@@ -3,6 +3,15 @@
 
 {% block title %}Контакты{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Контактная информация Троицкой Православной школы: адрес, телефоны, электронная почта и карта проезда.">
+  <meta name="keywords" content="контакты, Троицкая Православная школа, адрес, телефон, email, карта">
+  <meta property="og:title" content="Контакты — Троицкая Православная школа">
+  <meta property="og:description" content="Свяжитесь с Троицкой Православной школой или найдите нас на карте.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="administrative" style="margin-top: 20px; display: flex; justify-content: center;">
   <div class="container">

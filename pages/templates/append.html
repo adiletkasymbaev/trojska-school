@@ -3,6 +3,15 @@
 
 {% block title %}Алгоритм поступления{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Алгоритм поступления в Троицкую Православную школу. {{ current_page_info.title|truncatewords:25 }}">
+  <meta name="keywords" content="Троицкая Православная школа, поступление, алгоритм, {{ current_page_info.title }}">
+  <meta property="og:title" content="Алгоритм поступления — Троицкая Православная школа">
+  <meta property="og:description" content="{{ current_page_info.title|truncatewords:25 }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 
 <div class="administrative">

@@ -3,6 +3,15 @@
 
 {% block title %}Документы{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Документы Троицкой Православной школы — ознакомьтесь с нормативными, организационными и образовательными документами школы.">
+  <meta name="keywords" content="документы, школа, нормативные документы, образовательные документы, Троицкая Православная школа">
+  <meta property="og:title" content="Документы — Троицкая Православная школа">
+  <meta property="og:description" content="Полный перечень документов Троицкой Православной школы для родителей и учащихся.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="administrative">
   <div class="container">

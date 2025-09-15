@@ -578,7 +578,7 @@ class GenericPageA(models.Model):
     verbose_name_plural = "Страницы типа 'А'"
 
   def __str__(self):
-    return f"{self.category if self.category else "-"} | {self.page_title}"
+    return f"{self.category if self.category else '-'} | {self.page_title}"
 
 class GenericPageA_Paragraph(models.Model):
   page = models.ForeignKey(GenericPageA, on_delete=models.CASCADE, related_name="paragraphs")
@@ -621,7 +621,7 @@ class GenericPageB(models.Model):
     verbose_name_plural = "Страницы типа 'Б'"
 
   def __str__(self):
-    return f"{self.category if self.category else "-"} | {self.page_title}"
+    return f"{self.category if self.category else '-'} | {self.page_title}"
 
 class SubjectWeek(models.Model):
   name = models.CharField("Название", max_length=2000)
@@ -704,7 +704,7 @@ class GradeFullness(models.Model):
   teacher = models.ForeignKey(Teacher, verbose_name="Учитель", on_delete=models.CASCADE, related_name="teachers")
 
   def __str__(self):
-    return f"{self.grade_number} - {"Нет свободных мест" if self.is_full else "Есть свободные места"}"
+    return f"{self.grade_number} - {'Нет свободных мест' if self.is_full else 'Есть свободные места'}"
   
   class Meta: 
     verbose_name = "Свободные места"

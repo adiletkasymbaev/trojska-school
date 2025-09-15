@@ -3,6 +3,24 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from pages.views import *
+from django.contrib.sitemaps.views import sitemap
+from pages.sitemap import (
+    StaticViewSitemap, ArticleSitemap, AchievmentSitemap,
+    GallerySitemap, DocumentSitemap, GenericPageASitemap,
+    GenericPageBSitemap, SchoolInformationPageSitemap
+)
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'articles': ArticleSitemap,
+    'achievments': AchievmentSitemap,
+    'galleries': GallerySitemap,
+    'documents': DocumentSitemap,
+    'generic_a': GenericPageASitemap,
+    'generic_b': GenericPageBSitemap,
+    'school_pages': SchoolInformationPageSitemap,
+}
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -38,6 +56,9 @@ urlpatterns = [
     path('documents/<int:id>/', documents_detail_page, name="page_documents_detail"),
     path('gallery/', gallery_page, name="page_gallery"),
     path('gallery/<int:id>/', gallery_detail_page, name="page_gallery_detail"),
+
+    # ====
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django-sitemap'),
 ]
 
 if settings.DEBUG:

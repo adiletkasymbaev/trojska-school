@@ -3,6 +3,16 @@
 
 {% block title %}Предметные недели{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Предметные недели в Троицкой Православной школе — специальные мероприятия и тематические занятия для учащихся.">
+  <meta name="keywords" content="предметные недели, школа мероприятия, тематические недели, православная школа">
+  <meta property="og:title" content="Предметные недели — Троицкая Православная школа">
+  <meta property="og:description" content="Узнайте о предметных неделях и школьных мероприятиях, которые помогают учащимся глубже изучать предметы и развиваться.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
+
 {% block content %}
 <div class="container">
   <h2 class="generic-subtitle">

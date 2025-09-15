@@ -3,6 +3,15 @@
 
 {% block title %}Расписание автобусов{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Расписание автобусов Троицкой Православной школы: маршруты, остановки и время отправления.">
+  <meta name="keywords" content="расписание автобусов, маршруты, остановки, Троицкая Православная школа, время отправления">
+  <meta property="og:title" content="Расписание автобусов — Троицкая Православная школа">
+  <meta property="og:description" content="Узнайте актуальное расписание школьных автобусов, маршруты и остановки для учеников Троицкой Православной школы.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <h3 class="available_spots-title-h3"><a href="{% url 'page_type_b' 10 %}" class="generic-breadcrumb generic-subtitle">Родителям</a> | Расписание автобусов</h3>

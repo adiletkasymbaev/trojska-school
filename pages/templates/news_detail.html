@@ -3,6 +3,15 @@
 
 {% block title %} {{ current_page_info.title }} {% endblock %}
 
+{% block meta %}
+  <meta name="description" content="{{ current_page_info.description|striptags|truncatechars:160 }}">
+  <meta name="keywords" content="новость {{ current_page_info.title }}, православная школа, события, школьные новости">
+  <meta property="og:title" content="{{ current_page_info.title }} — Троицкая Православная школа">
+  <meta property="og:description" content="{{ current_page_info.description|striptags|truncatechars:200 }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="container">
   <h2 class="generic-subtitle">

@@ -3,6 +3,15 @@
 
 {% block title %}Достижения{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Ознакомьтесь с достижениями Троицкой Православной школы: успехи учеников, участие в конкурсах и мероприятиях.">
+  <meta name="keywords" content="Троицкая Православная школа, достижения, успехи, конкурсы, награды, мероприятия">
+  <meta property="og:title" content="Достижения — Троицкая Православная школа">
+  <meta property="og:description" content="Ознакомьтесь с достижениями Троицкой Православной школы: успехи учеников, участие в конкурсах и мероприятиях.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="news">
   <div class="container">

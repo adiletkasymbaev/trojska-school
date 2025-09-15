@@ -3,6 +3,15 @@
 
 {% block title %}Галерея{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Галерея Троицкой Православной школы — фотографии и видео школьной жизни, мероприятий и событий.">
+  <meta name="keywords" content="галерея, фото, видео, школьные мероприятия, Троицкая Православная школа">
+  <meta property="og:title" content="Галерея — Троицкая Православная школа">
+  <meta property="og:description" content="Смотрите фотографии и видео с мероприятий, уроков и жизни Троицкой Православной школы.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="news">
   <div class="container">

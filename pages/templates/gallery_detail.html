@@ -3,6 +3,18 @@
 
 {% block title %}{{ gallery.title }}{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="{{ gallery.description|default:gallery.title|striptags|truncatechars:160 }}">
+  <meta name="keywords" content="{{ gallery.title }}, галерея, фото, видео, Троицкая Православная школа">
+  <meta property="og:title" content="{{ gallery.title }} — Троицкая Православная школа">
+  <meta property="og:description" content="{{ gallery.description|default:gallery.title|striptags|truncatechars:200 }}">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+  {% if gallery.first_image_url %}
+    <meta property="og:image" content="{{ gallery.first_image_url }}">
+  {% endif %}
+{% endblock %}
+
 {% block content %}
 <div class="news">
   <div class="container">

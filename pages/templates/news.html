@@ -3,6 +3,15 @@
 
 {% block title %}Новости{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Новости Троицкой Православной школы: актуальные события, школьные мероприятия и важные объявления.">
+  <meta name="keywords" content="новости школы, православная школа события, школьные мероприятия, Троицкая школа">
+  <meta property="og:title" content="Новости — Троицкая Православная школа">
+  <meta property="og:description" content="Читайте последние новости и узнавайте о событиях Троицкой Православной школы.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="news">
   <div class="container">

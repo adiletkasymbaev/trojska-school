@@ -3,6 +3,15 @@
 
 {% block title %}Свободные места{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Информация о свободных местах в классах Троицкой Православной школы. Узнайте, где доступны места для записи учеников.">
+  <meta name="keywords" content="свободные места, запись в школу, Троицкая Православная школа, классы, параллели, учителя">
+  <meta property="og:title" content="Свободные места — Троицкая Православная школа">
+  <meta property="og:description" content="Проверьте актуальное наличие свободных мест в классах Троицкой Православной школы и выберите подходящую параллель.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="container" style="padding-bottom: 82.87px;">
     <h3 class="available_spots-title-h3"><a href="{% url 'page_type_b' 10 %}" class="generic-breadcrumb generic-subtitle">Родителям</a> | Свободные места</h3>

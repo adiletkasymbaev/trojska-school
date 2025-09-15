@@ -3,6 +3,16 @@
 
 {% block title %} {{ current_page_info.page_title }} {% endblock %}
 
+{% block meta %}
+  <meta name="description" content="{{ current_page_info.meta_description|default:current_page_info.page_title }}">
+  <meta name="keywords" content="{{ current_page_info.meta_keywords|default:'' }}">
+  <meta property="og:title" content="{{ current_page_info.page_title }}">
+  <meta property="og:description" content="{{ current_page_info.meta_description|default:current_page_info.page_title }}">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+  {% if current_page_info.image %}<meta property="og:image" content="{{ current_page_info.image.url }}">{% endif %}
+{% endblock %}
+
 {% block content %}
 <div class="container">
   <h2 class="generic-subtitle">

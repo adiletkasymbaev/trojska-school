@@ -3,50 +3,61 @@
 
 {% block title %}{{ teacher.full_name }}{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Преподаватель {{ teacher.full_name }} — педагог Троицкой Православной школы. Узнайте об образовании, ученой степени и опыте работы.">
+  <meta name="keywords" content="преподаватель {{ teacher.full_name }}, педагогическая команда, православная школа, учитель {{ teacher.full_name }}">
+  <meta property="og:title" content="{{ teacher.full_name }} — преподаватель Троицкой Православной школы">
+  <meta property="og:description" content="Информация о преподавателе {{ teacher.full_name }}: образование, направления подготовки, ученая степень, опыт работы.">
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
     <div class="container">
-        <h3 class="available_spots-title-h3"><a href="{% url 'page_type_b' 9 %}" class="generic-breadcrumb generic-subtitle">О нас</a> | <a href="{% url 'page_teachers' %}" class="generic-breadcrumb generic-subtitle">Педагогический состав</a> | {{ teacher.full_name }}</h3>
+        <h3 class="available_spots-title-h3">
+          <a href="{% url 'page_type_b' 9 %}" class="generic-breadcrumb generic-subtitle">О нас</a> | 
+          <a href="{% url 'page_teachers' %}" class="generic-breadcrumb generic-subtitle">Педагогический состав</a> | 
+          {{ teacher.full_name }}
+        </h3>
 
-            <div class="teaching_staff-block">
-                <div class="teaching_staff-right">
-                    {% if teacher.image %}
-                        <div class="teaching-staff_img" style="overflow: hidden; height: 587px; display: flex; justify-content: center; align-items: center;">
-                        <img src="{{ teacher.image.url }}" alt="" style="width: 100%;">
-                        </div>
-                    {% else %}
-                        <div class="faculty-content-profile" style="width: 443px; height: 588px; margin-top: 0;">
+        <div class="teaching_staff-block">
+            <div class="teaching_staff-right">
+                {% if teacher.image %}
+                    <div class="teaching-staff_img" style="overflow: hidden; height: 587px; display: flex; justify-content: center; align-items: center;">
+                        <img src="{{ teacher.image.url }}" alt="Фото преподавателя {{ teacher.full_name }}" style="width: 100%;">
+                    </div>
+                {% else %}
+                    <div class="faculty-content-profile" style="width: 443px; height: 588px; margin-top: 0;">
                         <p class="faculty-box-profile-title">Фото</p>
-                        </div>
-                    {% endif %}
-                </div>
-                <div class="teaching_staff-left">
-                    <h2 class="teaching-staff-h2" >{{ teacher.full_name }}</h2>
-                    <div class="teaching_staff-left-content">
-                        <div class="bus-schedule-buttons" style="display: flex; flex-wrap: wrap;">
-                        {% for t in teacher.tags.all %}
+                    </div>
+                {% endif %}
+            </div>
+            <div class="teaching_staff-left">
+                <h2 class="teaching-staff-h2">{{ teacher.full_name }}</h2>
+                <div class="teaching_staff-left-content">
+                    <div class="bus-schedule-buttons" style="display: flex; flex-wrap: wrap;">
+                    {% for t in teacher.tags.all %}
                         <a class="generic-category-item" style="width: auto; padding: 8px 20px;">{{ t.name }}</a>
-                        {% endfor %}
-                        </div>
+                    {% endfor %}
                     </div>
+                </div>
 
-                    <div class="teaching_staff-text-content  teaching_staff-text-contenting">
-                        <h4 class="teaching-staff-h4">Образование</h4>
-                        <p class="teaching-staff-text">Московский государственный университет М.В. <br> Ломоносова, 2007</p>
-                    </div>
-                    <div class="teaching_staff-text-content">
-                        <h4 class="teaching-staff-h4">Направление подготовки </h4>
-                        <p class="teaching-staff-text">Московский государственный университет М.В. <br> Ломоносова, 2007</p>
-                    </div>
-                    <div class="teaching_staff-text-content">
-                        <h4 class="teaching-staff-h4">Ученая степень</h4>
-                        <p class="teaching-staff-text">Московский государственный университет М.В. <br> Ломоносова, 2007</p>
-                    </div>
-                    <div class="teaching_staff-text-content">
-                        <p class="teaching-staff-texting">Стаж работы: <span class="teaching-staff-text">с 2013 г.</span></p>
-                    </div>
-
-
+                <div class="teaching_staff-text-content teaching_staff-text-contenting">
+                    <h4 class="teaching-staff-h4">Образование</h4>
+                    <p class="teaching-staff-text">Московский государственный университет М.В. <br> Ломоносова, 2007</p>
+                </div>
+                <div class="teaching_staff-text-content">
+                    <h4 class="teaching-staff-h4">Направление подготовки</h4>
+                    <p class="teaching-staff-text">Московский государственный университет М.В. <br> Ломоносова, 2007</p>
+                </div>
+                <div class="teaching_staff-text-content">
+                    <h4 class="teaching-staff-h4">Ученая степень</h4>
+                    <p class="teaching-staff-text">Московский государственный университет М.В. <br> Ломоносова, 2007</p>
+                </div>
+                <div class="teaching_staff-text-content">
+                    <p class="teaching-staff-texting">Стаж работы: <span class="teaching-staff-text">с 2013 г.</span></p>
                 </div>
             </div>
+        </div>
     </div>
 {% endblock %}

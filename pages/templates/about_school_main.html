@@ -3,6 +3,15 @@
 
 {% block title %}Информация о школе{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Узнайте подробную информацию о нашей школе: образовательные программы, педагогический состав, инфраструктура и особенности школы.">
+  <meta name="keywords" content="школа, информация, образовательные программы, педагогический состав, инфраструктура, особенности школы">
+  <meta property="og:title" content="Информация о школе — Троицкая Православная школа">
+  <meta property="og:description" content="Узнайте подробную информацию о нашей школе: образовательные программы, педагогический состав, инфраструктура и особенности школы.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="about-school">
   <div class="about-school-hero">

@@ -3,6 +3,15 @@
 
 {% block title %}История Казанской церкви{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Познакомьтесь с историей Казанской церкви, её основателями, важными событиями и значением для школьного сообщества.">
+  <meta name="keywords" content="Казанская церковь, история, школа, события, основатели, духовное наследие">
+  <meta property="og:title" content="История Казанской церкви — Троицкая Православная школа">
+  <meta property="og:description" content="Познакомьтесь с историей Казанской церкви, её основателями, важными событиями и значением для школьного сообщества.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="history">
   <div class="history-top">

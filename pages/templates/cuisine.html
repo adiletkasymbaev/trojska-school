@@ -3,6 +3,15 @@
 
 {% block title %} {{ current_page_info.title }} {% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Информация о питании учащихся Троицкой Православной школы: режим питания, рацион и особенности питания.">
+  <meta name="keywords" content="питание, режим питания, школа, Троицкая Православная школа, рацион учащихся">
+  <meta property="og:title" content="Питание — Троицкая Православная школа">
+  <meta property="og:description" content="Узнайте о режиме питания и рационе учащихся Троицкой Православной школы.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
   <div class="about-school">
     <div class="about-school-hero">

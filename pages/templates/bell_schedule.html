@@ -3,6 +3,15 @@
 
 {% block title %}Расписание звонков и автобусов{% endblock %}
 
+{% block meta %}
+  <meta name="description" content="Расписание звонков и автобусов Троицкой Православной школы: время уроков, перемены и маршруты школьных автобусов.">
+  <meta name="keywords" content="расписание звонков, школьные автобусы, Троицкая Православная школа, уроки, перемены, маршруты">
+  <meta property="og:title" content="Расписание звонков и автобусов — Троицкая Православная школа">
+  <meta property="og:description" content="Узнайте актуальное расписание звонков, время уроков, перемены и маршруты школьных автобусов для учеников Троицкой Православной школы.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="{{ request.build_absolute_uri }}">
+{% endblock %}
+
 {% block content %}
 <div class="container">
     <div class="available_spots-title-h3"><a href="{% url 'page_type_b' 10 %}" class="generic-breadcrumb generic-subtitle">Родителям</a> | Расписание звонков и автобусов</div>
