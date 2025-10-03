@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-5bopuw1ta2czwk+kh_$z*5#lrs49i=n22*ug9c7uxdvhxetugo
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['tpsh.ru']
 
 
 # Application definition
@@ -144,15 +144,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
-# STATIC_ROOT = BASE_DIR / 'static'
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
+STATIC_ROOT = '/home/k/kirilnft/tpsh.ru/public_html/trojska-school/static'
 STATIC_URL = 'static/'
 
 # Media files
 
-MEDIA_ROOT = BASE_DIR / 'media'
+MEDIA_ROOT = '/home/k/kirilnft/tpsh.ru/public_html/trojska-school/media'
 MEDIA_URL = '/media/'
 
 # Default primary key field type
