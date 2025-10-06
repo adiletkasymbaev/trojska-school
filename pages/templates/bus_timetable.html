@@ -20,12 +20,12 @@
             <div class="bus-schedule-block">
                 <div class="bus-schedule-buttons" style="display: grid; grid-template-columns: 1fr 1fr;">
                     {% for sc in schedules %}
-                    <a href="#{{ sc.title }}" class="generic-category-item" style="width: auto; padding: 8px 20px;">{{ sc.title }}</a>
+                    <a href="#{{ sc.anchor }}" class="generic-category-item" style="width: auto; padding: 8px 20px;">{{ sc.title }}</a>
                     {% endfor %}
                 </div>
 
                 {% for sc in schedules %}
-                <h2 class="bus-schedule-title" id="{{ sc.title }}">{{ sc.title }}</h2>
+                <h2 class="bus-schedule-title" id="{{ sc.anchor }}">{{ sc.title|linebreaksbr }}</h2>
 
                 <div class="bus-schedule-content">
                     <div class="bus-map">

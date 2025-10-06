@@ -5,8 +5,8 @@
   <div class="about-school-support-wrap">
     {% for help in current_page_help.schoolinformationhelpitem_set.all %}
     <div class="about-school-support-block">
-      <div class="about-school-support-int">{{ help.integer }}</div>
-      <div class="about-school-support-subtitle">{{ help.subtitle }}</div>
+      {% if help.integer %}<div class="about-school-support-int">{{ help.integer }}</div>{% endif %}
+      <div class="about-school-support-subtitle" {% if not help.integer %}style="font-size: 32px;"{% endif %}>{{ help.subtitle }}</div>
     </div>
     {% endfor %}
   </div>

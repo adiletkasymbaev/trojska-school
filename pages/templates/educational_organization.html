@@ -23,7 +23,7 @@
     </h1>
 
     <div class="administrative-content" style="margin-bottom: 32px;">
-      <div class="administrative-names">
+      <div class="administrative-names" style="width: 360px;">
         {% for control in paragraphs %}
         <div class="administrative-name">
           <span>{{ control.get_roman_id }}.</span>
@@ -33,13 +33,21 @@
         {% endfor %}
       </div>
 
-      <div class="educational-organization-list">
-        {% for control in paragraphs %}
-        <div class="educational-organization-item">
-          <h4 class="educational-organization-item-title">{{ control.title }}</h4>
-          <p class="educational-organization-item-description">{{ control.description|safe|linebreaksbr }}</p>
+      <div class="educational-organization-list" style="width: 100%;">
+        <div class="educational-organization-two-items">
+          <div class="educational-organization-item" style="width: 50%;">
+            <h4 class="educational-organization-item-title">{{ paragraphs.0.title }}</h4>
+            <p class="educational-organization-item-description" style="font-size: 18px;">{{ paragraphs.0.description|safe|linebreaksbr }}</p>
+          </div>
+          <div class="educational-organization-item" style="width: 50%;">
+            <h4 class="educational-organization-item-title">{{ paragraphs.1.title }}</h4>
+            <p class="educational-organization-item-description" style="font-size: 18px;">{{ paragraphs.1.description|safe|linebreaksbr }}</p>
+          </div>
         </div>
-        {% endfor %}
+        <div class="educational-organization-item">
+          <h4 class="educational-organization-item-title">{{ paragraphs.2.title }}</h4>
+          <p class="educational-organization-item-description" style="font-size: 18px;">{{ paragraphs.2.description|safe|linebreaksbr }}</p>
+        </div>
       </div>
     </div>
 

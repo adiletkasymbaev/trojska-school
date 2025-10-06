@@ -44,18 +44,24 @@
 
                 <div class="teaching_staff-text-content teaching_staff-text-contenting">
                     <h4 class="teaching-staff-h4">Образование</h4>
-                    <p class="teaching-staff-text">Московский государственный университет М.В. <br> Ломоносова, 2007</p>
+                    <p class="teaching-staff-text">{{ teacher.education }}</p>
                 </div>
+                {% if teacher.additional_education %}
+                <div class="teaching_staff-text-content">
+                    <h4 class="teaching-staff-h4">Дополнительное образование</h4>
+                    <p class="teaching-staff-text">{{ teacher.additional_education }}</p>
+                </div>
+                {% endif %}
                 <div class="teaching_staff-text-content">
                     <h4 class="teaching-staff-h4">Направление подготовки</h4>
-                    <p class="teaching-staff-text">Московский государственный университет М.В. <br> Ломоносова, 2007</p>
+                    <p class="teaching-staff-text">{{ teacher.direction }}</p>
                 </div>
                 <div class="teaching_staff-text-content">
                     <h4 class="teaching-staff-h4">Ученая степень</h4>
-                    <p class="teaching-staff-text">Московский государственный университет М.В. <br> Ломоносова, 2007</p>
+                    <p class="teaching-staff-text">{{ teacher.degree }}</p>
                 </div>
                 <div class="teaching_staff-text-content">
-                    <p class="teaching-staff-texting">Стаж работы: <span class="teaching-staff-text">с 2013 г.</span></p>
+                    <p class="teaching-staff-texting">Стаж работы: <span class="teaching-staff-text">{{ teacher.experience }}</span></p>
                 </div>
             </div>
         </div>

@@ -58,7 +58,7 @@
   border-top: 8px solid #4F5F4D;
   position: absolute;
   left: 0;
-  bottom: 89px;
+  bottom: 80px;
   width: 65%;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
@@ -74,11 +74,13 @@
 .articles-list {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 6px;
 }
 
 .article-item {
   height: 490px;
-  width: 378px;
+  width: 33%;
   border-radius: 8px;
   overflow: hidden;
   position: relative;

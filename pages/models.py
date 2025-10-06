@@ -1,3 +1,4 @@
+import random
 import re
 from django.db import models
 from django.urls import reverse
@@ -226,16 +227,16 @@ class MainPage(SingletonModel):
   hero_title = models.CharField("Заголовок на баннере", max_length=100)
 
   joining_step_1_title = models.CharField("Шаг 1 — заголовок", max_length=100)
-  joining_step_1_description = models.CharField("Шаг 1 — описание", max_length=100)
+  joining_step_1_description = models.CharField("Шаг 1 — описание", max_length=300)
 
   joining_step_2_title = models.CharField("Шаг 2 — заголовок", max_length=100)
-  joining_step_2_description = models.CharField("Шаг 2 — описание", max_length=100)
+  joining_step_2_description = models.CharField("Шаг 2 — описание", max_length=300)
 
   joining_step_3_title = models.CharField("Шаг 3 — заголовок", max_length=100)
-  joining_step_3_description = models.CharField("Шаг 3 — описание", max_length=100)
+  joining_step_3_description = models.CharField("Шаг 3 — описание", max_length=300)
 
   joining_step_4_title = models.CharField("Шаг 4 — заголовок", max_length=100)
-  joining_step_4_description = models.CharField("Шаг 4 — описание", max_length=100)
+  joining_step_4_description = models.CharField("Шаг 4 — описание", max_length=300)
 
   right_image = models.ImageField("Изображение справа", upload_to="main_page/right_image")
 
@@ -294,7 +295,7 @@ class SchoolInformationHelp(SingletonModel):
   
 class SchoolInformationHelpItem(models.Model):
   school_information = models.ForeignKey(SchoolInformationHelp, on_delete=models.CASCADE, null=True, blank=True)
-  integer = models.IntegerField("Число статистики")
+  integer = models.IntegerField("Число статистики", null=True, blank=True)
   subtitle = models.CharField("Текст статистики", max_length=1000, null=True, blank=True)
 
   class Meta:
@@ -308,6 +309,10 @@ class SchoolInformationDonation(models.Model):
   title = models.CharField("Заголовок", max_length=1000)
   description = models.TextField("Текст", max_length=1000)
 
+  def save(self, *args, **kwargs):
+    self.content = parse_description(self.description)
+    super().save(*args, **kwargs)
+
   class Meta:
     verbose_name = "Информация о школе: Реквизиты для поддержки"
     verbose_name_plural = "Информация о школе: Реквизиты для поддержки"
@@ -316,7 +321,7 @@ class SchoolInformationDonation(models.Model):
     return self.title
   
 class SchoolInformationPage(models.Model):
-  page_title = models.CharField("Название страницы", max_length=1000, default="...")
+  page_title = models.CharField("Название страницы", max_length=1000, null=True, blank=True)
   image = models.ImageField("Изображение", upload_to="school_information/", null=True, blank=True)
   title = models.CharField("Заголовок блока с изображением", max_length=1000, null=True, blank=True)
   subtitle = models.CharField("Подзаголовок блока с изображением", max_length=1000, null=True, blank=True)
@@ -503,8 +508,13 @@ class BellSchedule(models.Model):
     return f"{self.time_start} - {self.time_end} ({self.text})"
 
 class BusSchedule(models.Model):
-  title = models.CharField("Название маршрута", max_length=2000)
+  title = models.TextField("Название маршрута", max_length=2000)
+  anchor = models.PositiveIntegerField("Якорь маршрута(для навигации в странице маршрутов)", null=True, blank=True)
   image = models.ImageField("Изображение с картой", upload_to="maps/", null=True, blank=True)
+
+  def save(self, *args, **kwargs):
+    self.anchor = random.randint(1, 1000)
+    super().save(*args, **kwargs)
 
   class Meta: 
     verbose_name = "Расписание автобусов"
@@ -608,6 +618,7 @@ class GenericPageB(models.Model):
   page_title = models.CharField("Название страницы", max_length=2000)
   description = models.TextField("Описание", max_length=20000)
   title_color = models.CharField("Цвет заголовка", max_length=7, choices=COLOR_CHOICES, default='#913232')
+  is_navigational = models.BooleanField("Является ли страницей навигации?", default=False)
 
   def save(self, *args, **kwargs):
     self.description = parse_description(self.description)
@@ -665,7 +676,8 @@ class Teacher(models.Model):
   category = models.ForeignKey(TeacherCategory, verbose_name="Категория", related_name='categories', on_delete=models.CASCADE, null=True, blank=True)
   tags = models.ManyToManyField(Tag, verbose_name="Теги", related_name='teachers')
   education = models.CharField("Образование", max_length=1000)
-  direction = models.CharField("Направление подготовки ", max_length=1000)
+  additional_education = models.CharField("Дополнительное образование", max_length=1000, null=True, blank=True)
+  direction = models.CharField("Специальность ", max_length=1000)
   degree = models.CharField("Ученая степень ", max_length=1000)
   experience = models.CharField("Стаж работы ", max_length=1000)
 

@@ -1,9 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, render
+
+from pages.utils import get_current_lesson
 from .models import *
 
 def main_page(request):
   contacts = Contact.objects.all()[0]
+  current_lesson = get_current_lesson(BellSchedule)
   articles = Article.objects.all().filter(is_on_feed=True)
   main_page_info = MainPage.objects.all()[0]
   page_for_nav_a = GenericPageA.objects.all().filter(show_in_nav=True)
@@ -15,6 +18,7 @@ def main_page(request):
       'main_page_info': main_page_info,
       'page_for_nav_a': page_for_nav_a,
       'page_for_nav_b': page_for_nav_b,
+      'current_lesson': current_lesson
   }
 
   return render(request, 'index.html', context)
@@ -22,7 +26,7 @@ def main_page(request):
 def news_page(request):
   if request.method == "GET":
       contacts = Contact.objects.all()[0]
-      articles = Article.objects.all()
+      articles = Article.objects.order_by('-created_at')
       category = Category.objects.all()
       main_page_info = MainPage.objects.all()[0]
       page_for_nav_a = GenericPageA.objects.all().filter(show_in_nav=True)

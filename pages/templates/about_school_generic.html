@@ -6,6 +6,7 @@
 {% block content %}
 
   <div class="about-school">
+    {% if current_page_info.image %}
     <div class="about-school-hero">
       <div class="about-school-hero-image-wrap">
         <img src="{{ current_page_info.image.url }}" alt="" class="about-school-hero-image">
@@ -26,6 +27,7 @@
         </div>
       {% endif %}
     </div>
+    {% endif %}
 
     <div class="container">
       {% if current_page_info.custom_breadcrumbs %}
@@ -41,7 +43,7 @@
 
     <div class="about-school-container">
 
-      <div class="container about-school-page-content" style="{% if current_page_info.should_add_support %}margin-bottom: 56px;{% endif %}">
+      <div class="container about-school-page-content" style="{% if current_page_info.should_add_support %}margin-bottom: 56px;{% endif %} text-align: justify;">
         {{ current_page_info.content|safe|linebreaksbr }}
       </div>
 

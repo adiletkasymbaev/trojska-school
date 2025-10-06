@@ -97,7 +97,7 @@
   padding-right: 78px;
 }
 
-.about-school-page-subtitle {
+.about-school-page-subtitle, .about-school-page-subtitle > span {
   color: #020F01;
   font-size: 24px;
   font-weight: 600;
@@ -172,7 +172,7 @@
   width: 388px;
   height: 256px;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   flex-direction: column;
   padding: 32px;
@@ -190,7 +190,7 @@
 .about-school-support-subtitle {
   color: #020F01;
   letter-spacing: 0%;
-  font-size: 32px;
+  font-size: 28px;
   font-weight: 400;
   font-family: 'Literata', sans-serif;
   opacity: 0.6;
@@ -232,6 +232,13 @@
   background: #CFD1C4;
   max-height: 0;
   transition: max-height 0.2s ease-out, padding 0.2s ease-out;
+}
+
+.about-school-accordion-item-pants > a {
+  font-weight: 600;
+  font-size: 22px;
+  text-decoration: underline;
+  color: #020F01;
 }
 
 .about-school-accordion-item-title {
@@ -334,7 +341,7 @@
 }
 
 .history-top-left > .generic-subtitle {  
-  color: #4F5F4D;
+  opacity: 0.8;
 }
 
 .history-top-right {

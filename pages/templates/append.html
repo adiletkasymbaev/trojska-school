@@ -37,6 +37,11 @@
 
           <span>Поступление в 2-11 класс</span>
         </a>
+        <a href="{% url 'page_school_information_detail' 5 %}" class="administrative-name">
+          <span>IV.</span>
+
+          <span>Анкета для родителя</span>
+        </a>
       </div>
 
       <div class="administrative-list">
@@ -58,6 +63,56 @@
         </div>
       </div>
     </div>
+
+    <section class="become-family" style="margin-top: 30px;">
+        <div class="container">
+            <h2 class="become-family-title">Алгоритм поступления</h2>
+            <div class="become-family-content">
+
+                <div class="become-family-block">
+                    <div class="become-family-box">
+                        <img class="become-position" src="{% static 'assets/marka.png' %}" alt="">
+                        <h3 class="become-box-title">{{ main_page_info.joining_step_1_title }}</h3>
+                        <p class="become-box-text">
+                            {{ main_page_info.joining_step_1_description }}
+                            <a href="mailto:troitsk-school@list.ru" class="mister-link">troitsk-school@list.ru</a>
+                        </p>
+                        <div style="display: flex; flex-direction: column; margin-top: 10px;">
+                            <a class="mister-link" download href="https://tpsh.mskobr.ru/attach_files/dlya-postupayuschego-v-1-klass-tpsh.doc">Анкета для поступающего в 1 класс</a>
+                            <a class="mister-link" download href="https://tpsh.mskobr.ru/attach_files/dlya-postupayuschego-v-2-9-klassyi-tpsh.doc">Анкета для поступающего в 2-9 классы</a>
+                            <a class="mister-link" download href="https://tpsh.mskobr.ru/attach_files/dlya-postupayuschego-v-10-11-klassyi-tpsh.doc">Анкета для поступающего в 10-11 классы</a>
+                            <a class="mister-link" download href="https://tpsh.mskobr.ru/attach_files/roditelskaya-anketa.pdf">Анкета для родителя</a>
+                        </div>
+                    </div>
+
+                    <div class="become-family-box">
+                        <img class="become-position" src="{% static 'assets/marka.png' %}" alt="">
+                        <h3 class="become-box-title">{{ main_page_info.joining_step_3_title }}</h3>
+                        <p class="become-box-text">{{ main_page_info.joining_step_3_description }}</p>
+                    </div>
+                </div>
+                <div class="become-family-block">
+                    <div class="become-family-box">
+                        <img class="become-position" src="{% static 'assets/marka.png' %}" alt="">
+                        <h3 class="become-box-title">{{ main_page_info.joining_step_2_title }}</h3>
+                        <p class="become-box-text" style="font-size: 18px; padding-top: 15px;">{{ main_page_info.joining_step_2_description }}</p>
+                    </div>
+
+                    <div class="become-family-box">
+                        <img class="become-position" src="{% static 'assets/marka.png' %}" alt="">
+                        <h3 class="become-box-title">{{ main_page_info.joining_step_4_title }}</h3>
+                        <p class="become-box-text">{{ main_page_info.joining_step_4_description }}</p>
+                    </div>
+                </div>
+                <div class="become-family-left">
+                    <a href="{% url 'page_append' %}" class="become-family-btn" style="display: flex; justify-content: center; align-items: center; opacity: 0; cursor: default;"> 
+                        Подробнее
+                    </a>
+                    <img class="become-family-img" src="{% static 'assets/image_59.png' %}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
   </div>
 </div>
 {% endblock %}

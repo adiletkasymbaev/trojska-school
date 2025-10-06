@@ -1,8 +1,12 @@
 import re
+from django.utils import timezone
 
 def parse_description(desc: str) -> str:
     # 1. Заменить *жирный текст* на <b>жирный текст</b>
     desc = re.sub(r'\*(.*?)\*', r'<b>\1</b>', desc)
+
+    # 1.1. Заменить _курсив_ на <i>курсив</i>
+    desc = re.sub(r'_(.*?)_', r'<i>\1</i>', desc)
 
     # 2. Обработка специальных ссылок вида >[текст](ссылка)
     def custom_link_block(match):
@@ -94,3 +98,31 @@ def int_to_roman(num):
         roman += syms[i] * count
         num %= val[i]
     return roman
+
+def get_current_lesson(schedule_obj):
+    """
+    Возвращает словарь с номером урока, временем начала и объектом BellSchedule.
+    Если текущее время не попадает ни в один интервал — вернёт последний урок.
+    """
+    now = timezone.localtime().time()
+    schedule = list(schedule_obj.objects.order_by("time_start"))
+
+    if not schedule:
+        return None  # если расписание пустое
+
+    for idx, bell in enumerate(schedule, start=1):
+        if bell.time_start <= now < bell.time_end:
+            return {
+                "lesson_number": idx,
+                "start_time": bell.time_start,
+                "schedule": bell
+            }
+        
+    # если ни один интервал не подошёл → вернуть последний урок
+    last_idx = len(schedule)
+    last_bell = schedule[-1]
+    return {
+        "lesson_number": last_idx,
+        "start_time": last_bell.time_start,
+        "schedule": last_bell,
+    }

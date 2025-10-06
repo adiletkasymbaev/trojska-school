@@ -15,9 +15,8 @@
 
 .Lesson-time {
     position: absolute;
-    width: 192.5px;
-    height: 73.89px;border-radius: 8px;
-    /* green */
+    border-radius: 8px;
+    padding: 10px 16px;
     text-align: center;
     background: rgb(79, 95, 77);
     display: flex;
